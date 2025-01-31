@@ -7,7 +7,11 @@ export interface HeaderProps extends React.HTMLAttributes<HTMLDivElement> {
 }
 
 export const Header = ({ className, children, ref, ...props }: HeaderProps) => (
-	<header ref={ref} className={cn("relative flex items-center justify-between border-b py-2", className)} {...props}>
+	<header
+		ref={ref}
+		className={cn("bg-background relative sticky top-0 flex items-center justify-between border-b py-2", className)}
+		{...props}
+	>
 		<Nav />
 
 		<Link href="/" className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-xl font-bold">
