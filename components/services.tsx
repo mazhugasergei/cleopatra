@@ -1,3 +1,5 @@
+"use client"
+
 import { cn } from "@/helpers/tailwind"
 import React from "react"
 
@@ -5,17 +7,17 @@ const services = [
 	{
 		name: "Cars selection",
 		description:
-			"Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ab reprehenderit iusto tempore? Ut non, enim adipisci blanditiis eos ad velit.",
+			"We offer a wide range of vehicles, including Korean, German, American, and other top-brand cars. Whether you're looking for a new, used, or salvaged vehicle, we source the best options to meet your needs and budget.",
 	},
 	{
 		name: "Cars disassembling",
 		description:
-			"Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus sapiente eaque quasi numquam fugiat expedita, consequuntur, eligendi quas nisi, nobis dignissimos. Quas dicta aliquam a.",
+			"Our skilled team dismantles vehicles to provide customers with specific parts or components. We ensure that every part is handled professionally, preserving its quality and functionality for resale or reuse.",
 	},
 	{
 		name: "Containers loading and sending",
 		description:
-			"Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem ullam veniam mollitia amet soluta. Quasi provident harum nemo, qui quibusdam, perspiciatis, libero molestiae commodi minus alias consectetur assumenda labore. Accusantium.",
+			"We specialize in secure container loading and worldwide shipping. Our team ensures that vehicles and parts are packed efficiently, minimizing damage and maximizing space. We handle all logistics, ensuring smooth and timely delivery to your destination.",
 	},
 ]
 
@@ -27,7 +29,7 @@ export const Services = (props: ServicesProps) => {
 	const [selected, setSelected] = React.useState(0)
 
 	return (
-		<section {...props}>
+		<section id="services" {...props}>
 			<h1 className="text-center text-3xl font-bold">Our services</h1>
 			<ul className="flex justify-center gap-2 border-b">
 				{services.map((service, index) => (
@@ -62,8 +64,7 @@ export const Services = (props: ServicesProps) => {
 
 			<div className="grid grid-cols-1 gap-4 pt-4 md:grid-cols-2">
 				<div>{services[selected].description}</div>
-
-				<div className="bg-primary aspect-[3/4]"></div>
+				<div className="bg-primary aspect-[3/2]"></div>
 			</div>
 		</section>
 	)
