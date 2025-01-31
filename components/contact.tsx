@@ -34,11 +34,15 @@ export const Contacts = ({ className, ...props }: Contacts) => (
 		<div>
 			<div>
 				<p className="font-bold">Korean / English / Arabic</p>
-				<p>+8210-8296-9320 (Hamdy)</p>
+				<Link href="tel:+821082969320" className="hover:underline">
+					+8210-8296-9320 (Hamdy)
+				</Link>
 			</div>
 			<div>
 				<p className="font-bold">Russian / English</p>
-				<p>+8210-4798-9320 (Natalia)</p>
+				<Link href="tel:+8210479789320" className="hover:underline">
+					+8210-4798-9320 (Natalia)
+				</Link>
 			</div>
 		</div>
 
