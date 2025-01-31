@@ -32,6 +32,11 @@
 	}
 }
 
+html {
+	scroll-behavior: smooth;
+	scroll-padding: 5rem;
+}
+
 body {
 	font-family:
 		system-ui,

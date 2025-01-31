@@ -7,7 +7,7 @@ export interface ContactProps extends React.HTMLAttributes<HTMLDivElement> {
 
 export const Contact = (props: ContactProps) => {
 	return (
-		<section {...props}>
+		<section id="contact" {...props}>
 			<h1 className="text-3xl font-bold">Contact us</h1>
 			<Contacts />
 		</section>

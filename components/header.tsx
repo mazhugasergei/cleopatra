@@ -1,6 +1,6 @@
 import { cn } from "@/helpers/tailwind"
 import Link from "next/link"
-import { Button, buttonVariants } from "./button"
+import { buttonVariants } from "./button"
 import { Logo } from "./logo"
 
 export interface HeaderProps extends React.HTMLAttributes<HTMLDivElement> {
@@ -18,22 +18,24 @@ export const Header = ({ className, children, ref, ...props }: HeaderProps) => (
 	>
 		<Nav />
 		<Logo className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2" />
-		<Button>Contact</Button>
+		<Link href="#contact" className={buttonVariants()}>
+			Contact
+		</Link>
 	</header>
 )
 
 export const Nav = () => {
 	const routes = [
 		{
-			href: "/",
+			href: "#",
 			label: "Home",
 		},
 		{
-			href: "/about",
+			href: "#about",
 			label: "About",
 		},
 		{
-			href: "/services",
+			href: "#services",
 			label: "Services",
 		},
 	]
