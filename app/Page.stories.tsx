@@ -1,27 +1,20 @@
 import type { Meta, StoryObj } from "@storybook/react"
+import Layout from "./layout"
 import Page from "./page"
 
-const meta: Meta<typeof Page> = {
+const meta: Meta<typeof Layout> = {
 	title: "Page",
-	component: Page,
+	component: Layout,
 	parameters: {
-		layout: "fullscreen",
-	},
-	argTypes: {
-		ref: {
-			table: { disable: true },
-			control: false,
-		},
+		page: "fullscreen",
 	},
 }
 
 export default meta
 type Story = StoryObj<typeof meta>
 
-const defaultArgs: Partial<Story["args"]> = {}
-
 export const Default: Story = {
 	args: {
-		...defaultArgs,
+		children: <Page />,
 	},
 }
