@@ -1,17 +1,25 @@
+import { cn } from "@/helpers/tailwind"
 import Link from "next/link"
 
-export const Contact = () => {
-	return (
-		<section className="px-4">
-			<h1 className="text-3xl font-bold">Contact us</h1>
+export interface ContactProps extends React.HTMLAttributes<HTMLDivElement> {
+	ref?: React.Ref<HTMLDivElement>
+}
 
+export const Contact = (props: ContactProps) => {
+	return (
+		<section {...props}>
+			<h1 className="text-3xl font-bold">Contact us</h1>
 			<Contacts />
 		</section>
 	)
 }
 
-export const Contacts = () => (
-	<div className="mt-4 flex flex-col items-start gap-4">
+export interface Contacts extends React.HTMLAttributes<HTMLDivElement> {
+	ref?: React.Ref<HTMLDivElement>
+}
+
+export const Contacts = ({ className, ...props }: Contacts) => (
+	<div className={cn("flex flex-col items-start gap-4", className)} {...props}>
 		<p className="flex flex-col text-[1.2rem] font-bold">CLEOPATRA TRAIDING CO.</p>
 
 		<div>

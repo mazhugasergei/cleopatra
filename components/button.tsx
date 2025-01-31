@@ -38,8 +38,8 @@ export interface ButtonProps
 	ref?: React.Ref<HTMLButtonElement>
 }
 
-export const Button = ({ className, variant, size, children, ref, ...props }: ButtonProps) => (
-	<button ref={ref} className={cn(buttonVariants({ variant, size, className }))} {...props}>
+export const Button = ({ className, variant, size, children, ...props }: ButtonProps) => (
+	<button className={cn(buttonVariants({ variant, size, className }))} {...props}>
 		{children}
 	</button>
 )

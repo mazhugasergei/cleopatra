@@ -19,11 +19,15 @@ const services = [
 	},
 ]
 
-export const Services = () => {
+export interface ServicesProps extends React.HTMLAttributes<HTMLDivElement> {
+	ref?: React.Ref<HTMLDivElement>
+}
+
+export const Services = (props: ServicesProps) => {
 	const [selected, setSelected] = React.useState(0)
 
 	return (
-		<section className="px-4">
+		<section {...props}>
 			<h1 className="text-center text-3xl font-bold">Our services</h1>
 			<ul className="flex justify-center gap-2 border-b">
 				{services.map((service, index) => (

@@ -1,6 +1,7 @@
 import { cn } from "@/helpers/tailwind"
 import Link from "next/link"
 import { Button, buttonVariants } from "./button"
+import { Logo } from "./logo"
 
 export interface HeaderProps extends React.HTMLAttributes<HTMLDivElement> {
 	ref?: React.Ref<HTMLDivElement>
@@ -9,15 +10,14 @@ export interface HeaderProps extends React.HTMLAttributes<HTMLDivElement> {
 export const Header = ({ className, children, ref, ...props }: HeaderProps) => (
 	<header
 		ref={ref}
-		className={cn("bg-background relative sticky top-0 flex items-center justify-between border-b py-2", className)}
+		className={cn(
+			"bg-background relative sticky top-0 flex items-center justify-between border-b py-2 pr-2",
+			className
+		)}
 		{...props}
 	>
 		<Nav />
-
-		<Link href="/" className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-xl font-bold">
-			CLEOPATRA
-		</Link>
-
+		<Logo className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2" />
 		<Button>Contact</Button>
 	</header>
 )
