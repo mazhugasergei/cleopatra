@@ -10,9 +10,9 @@ export interface HeroProps extends React.HTMLAttributes<HTMLDivElement> {
 
 export const Hero = ({ className, ...props }: HeroProps) => {
 	return (
-		<section className={cn("grid grid-cols-1 gap-4 md:grid-cols-[7fr_10fr]", className)} {...props}>
+		<section className={cn("grid grid-cols-1 gap-4 pt-10 md:grid-cols-[7fr_10fr]", className)} {...props}>
 			<div className="px-8 py-10">
-				<h1 className={cn(headingFont.className, "flex flex-col text-[2.5rem] font-bold leading-[1.2]")}>
+				<h1 className={cn(headingFont.className, "flex flex-col text-[3rem] font-bold leading-[1.2]")}>
 					<span>Dont just </span>
 					<span>get it. </span>
 					<span>Drive it.</span>
@@ -27,7 +27,7 @@ export const Hero = ({ className, ...props }: HeroProps) => {
 				width={1000}
 				height={1000}
 				placeholder="blur"
-				className="pointer-events-none h-full w-full object-cover object-[40%_0%]"
+				className="pointer-events-none h-full w-full rounded-xl object-cover object-[40%_0%]"
 			/>
 		</section>
 	)

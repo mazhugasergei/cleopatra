@@ -18,7 +18,7 @@ export const Header = ({ className, children, ref, ...props }: HeaderProps) => (
 	>
 		<Nav />
 		<Logo className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2" />
-		<Link href="#contact" className={buttonVariants()}>
+		<Link href="#contact" className={buttonVariants({ size: "lg", className: "rounded-none" })}>
 			Contact
 		</Link>
 	</header>

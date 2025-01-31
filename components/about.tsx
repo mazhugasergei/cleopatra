@@ -7,7 +7,7 @@ export interface AboutProps extends React.HTMLAttributes<HTMLDivElement> {
 export const About = ({ className, ...props }: AboutProps) => {
 	return (
 		<section id="about" className={cn("space-y-4", className)} {...props}>
-			<h1 className="text-3xl font-bold">About us</h1>
+			<h2 className="border-b pb-4 text-4xl font-bold">About us</h2>
 			<p>
 				At Cleopatra Traiding Co., we specialize in sourcing, dismantling, and delivering vehicles and spare parts
 				worldwide. Based in Incheon, South Korea, we provide a seamless experience for customers looking for Korean,

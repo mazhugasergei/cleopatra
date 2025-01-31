@@ -2,6 +2,7 @@
 
 import { cn } from "@/helpers/tailwind"
 import React from "react"
+import { buttonVariants } from "./button"
 
 const services = [
 	{
@@ -30,16 +31,19 @@ export const Services = (props: ServicesProps) => {
 
 	return (
 		<section id="services" {...props}>
-			<h1 className="text-center text-3xl font-bold">Our services</h1>
-			<ul className="flex justify-center gap-2 border-b">
+			<h2 className="text-center text-4xl font-bold">Our services</h2>
+			<p className="mt-2 text-balance text-center">
+				We source, dismantle, and ship cars and parts worldwide. Reliable, efficient, and hassle-free.
+			</p>
+
+			<ul className="mt-4 flex justify-center gap-2 border-b">
 				{services.map((service, index) => (
 					<li
 						key={service.name}
 						className={cn(
-							"flex items-center justify-between border-b border-transparent p-4",
-							selected === index && "border-primary border-b"
+							"flex items-center justify-between border-b-2 border-transparent p-3",
+							selected === index && "border-primary"
 						)}
-						onClick={() => setSelected(index)}
 					>
 						<input
 							type="radio"
@@ -51,10 +55,13 @@ export const Services = (props: ServicesProps) => {
 						/>
 						<label
 							htmlFor={service.name}
-							className={cn(
-								"text-secondary-foreground font-bold peer-focus-visible:outline",
-								selected === index && "text-primary"
-							)}
+							className={buttonVariants({
+								variant: "ghost",
+								className: cn(
+									"cursor-pointer peer-focus-visible:outline",
+									selected === index ? "text-primary" : "text-muted-foreground"
+								),
+							})}
 						>
 							{service.name}
 						</label>
@@ -62,9 +69,9 @@ export const Services = (props: ServicesProps) => {
 				))}
 			</ul>
 
-			<div className="grid grid-cols-1 gap-4 pt-4 md:grid-cols-2">
+			<div className="grid grid-cols-1 gap-10 pt-8 md:grid-cols-2">
 				<div>{services[selected].description}</div>
-				<div className="bg-primary aspect-[3/2]"></div>
+				<div className="bg-primary aspect-[3/2] rounded-xl"></div>
 			</div>
 		</section>
 	)

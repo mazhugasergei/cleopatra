@@ -6,7 +6,7 @@ export interface FooterProps extends React.HTMLAttributes<HTMLDivElement> {
 }
 
 export const Footer = ({ className, ...props }: FooterProps) => (
-	<footer className={cn("mt-8 border-t py-4", className)} {...props}>
+	<footer className={cn("border-t py-4", className)} {...props}>
 		<Logo full />
 	</footer>
 )
