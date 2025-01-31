@@ -6,26 +6,35 @@ export interface HeaderProps extends React.HTMLAttributes<HTMLDivElement> {
 	ref?: React.Ref<HTMLDivElement>
 }
 
-const routes = [
-	{
-		href: "/",
-		label: "Home",
-	},
-	{
-		href: "/about",
-		label: "About",
-	},
-	{
-		href: "/services",
-		label: "Services",
-	},
-]
-
 export const Header = ({ className, children, ref, ...props }: HeaderProps) => (
-	<header ref={ref} className={cn("flex items-center justify-between border-b py-2", className)} {...props}>
-		<Link href="/" className="text-xl font-bold">
+	<header ref={ref} className={cn("relative flex items-center justify-between border-b py-2", className)} {...props}>
+		<Nav />
+
+		<Link href="/" className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-xl font-bold">
 			CLEOPATRA
 		</Link>
+
+		<Button>Contact</Button>
+	</header>
+)
+
+export const Nav = () => {
+	const routes = [
+		{
+			href: "/",
+			label: "Home",
+		},
+		{
+			href: "/about",
+			label: "About",
+		},
+		{
+			href: "/services",
+			label: "Services",
+		},
+	]
+
+	return (
 		<nav>
 			<ul className="items-centera flex">
 				{routes.map((route) => (
@@ -37,6 +46,5 @@ export const Header = ({ className, children, ref, ...props }: HeaderProps) => (
 				))}
 			</ul>
 		</nav>
-		<Button>Contact</Button>
-	</header>
-)
+	)
+}

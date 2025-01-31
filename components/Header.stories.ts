@@ -4,7 +4,9 @@ import type { Meta, StoryObj } from "@storybook/react"
 const meta: Meta<typeof Header> = {
 	title: "Header",
 	component: Header,
-	parameters: {},
+	parameters: {
+		layout: "fullscreen",
+	},
 	tags: ["autodocs"],
 	argTypes: {
 		ref: {
