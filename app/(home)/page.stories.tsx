@@ -6,7 +6,7 @@ const meta: Meta<typeof Layout> = {
 	title: "Page",
 	component: Layout,
 	parameters: {
-		page: "fullscreen",
+		layout: "fullscreen",
 	},
 }
 
