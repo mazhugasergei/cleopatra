@@ -51,7 +51,7 @@ export const Services = (props: ServicesProps) => {
 							id={service.name}
 							checked={selected === index}
 							onChange={() => setSelected(index)}
-							className="peer absolute opacity-0"
+							className="peer absolute z-[-1] opacity-0"
 						/>
 						<label
 							htmlFor={service.name}
