@@ -11,7 +11,7 @@ export const Header = ({ className, children, ref, ...props }: HeaderProps) => (
 	<header
 		ref={ref}
 		className={cn(
-			"bg-background relative sticky top-0 flex items-center justify-between border-b py-2 pr-2",
+			"bg-background relative sticky top-0 z-50 flex items-center justify-between border-b py-2 pr-2",
 			className
 		)}
 		{...props}
