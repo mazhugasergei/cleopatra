@@ -32,6 +32,34 @@ export interface ServicesProps extends React.HTMLAttributes<HTMLDivElement> {
 export const Services = ({ className, ...props }: ServicesProps) => {
 	const [selected, setSelected] = React.useState(0)
 
+	const containerRef = React.useRef<HTMLUListElement>(null)
+	const [isMouseDown, setIsMouseDown] = React.useState(false)
+	const [isDragging, setIsDragging] = React.useState(false)
+	const [startX, setStartX] = React.useState(0)
+	const [scrollLeft, setScrollLeft] = React.useState(0)
+
+	const handleMouseDown = (e: React.MouseEvent) => {
+		if (!containerRef.current) return
+		setIsMouseDown(true)
+		setStartX(e.pageX - containerRef.current.offsetLeft)
+		setScrollLeft(containerRef.current.scrollLeft)
+	}
+
+	const handleMouseMove = (e: React.MouseEvent) => {
+		if (!containerRef.current) return
+		if (!isMouseDown) return
+		e.preventDefault()
+		setIsDragging(true)
+		const x = e.pageX - containerRef.current.offsetLeft
+		const walk = x - startX
+		containerRef.current.scrollLeft = scrollLeft - walk
+	}
+
+	const handleMouseUp = () => {
+		setIsMouseDown(false)
+		setIsDragging(false)
+	}
+
 	return (
 		<section id="services" className={cn("space-y-2", className)} {...props}>
 			<h2 className="text-center text-4xl font-bold">Our services</h2>
@@ -40,7 +68,14 @@ export const Services = ({ className, ...props }: ServicesProps) => {
 			</p>
 
 			{/* tabs */}
-			<ul className="overflow-x-auto border-b">
+			<ul
+				ref={containerRef}
+				onMouseDown={handleMouseDown}
+				onMouseMove={handleMouseMove}
+				onMouseLeave={handleMouseUp}
+				onMouseUp={handleMouseUp}
+				className="scrollbar-hide overflow-x-auto border-b"
+			>
 				<div className="mx-auto flex w-fit gap-2">
 					{services.map((service, index) => (
 						<li
@@ -64,7 +99,8 @@ export const Services = ({ className, ...props }: ServicesProps) => {
 									variant: "ghost",
 									className: cn(
 										"cursor-pointer peer-focus-visible:outline",
-										selected === index ? "text-primary" : "text-muted-foreground"
+										selected === index ? "text-primary" : "text-muted-foreground",
+										isDragging && "pointer-events-none select-none"
 									),
 								})}
 							>
