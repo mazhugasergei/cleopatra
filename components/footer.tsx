@@ -1,4 +1,5 @@
 import { cn } from "@/helpers/tailwind"
+import { Socials } from "./contact"
 import { Logo } from "./logo"
 
 export interface FooterProps extends React.HTMLAttributes<HTMLDivElement> {
@@ -6,7 +7,8 @@ export interface FooterProps extends React.HTMLAttributes<HTMLDivElement> {
 }
 
 export const Footer = ({ className, ...props }: FooterProps) => (
-	<footer className={cn("border-t py-4", className)} {...props}>
+	<footer className={cn("flex items-center justify-between gap-4 border-t py-8", className)} {...props}>
 		<Logo full />
+		<Socials />
 	</footer>
 )
