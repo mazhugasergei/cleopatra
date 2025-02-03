@@ -12,7 +12,7 @@ export const Hero = ({ className, ...props }: HeroProps) => {
 	return (
 		<section className={cn("grid grid-cols-1 gap-4 pt-10 md:grid-cols-[7fr_10fr]", className)} {...props}>
 			<div className="px-8 py-10">
-				<h1 className={cn(headingFont.className, "flex flex-col text-[3rem] font-bold leading-[1.2]")}>
+				<h1 className={cn(headingFont.className, "flex flex-col text-[3rem] leading-[1.2] font-bold")}>
 					<span>Dont just </span>
 					<span>get it. </span>
 					<span>Drive it.</span>

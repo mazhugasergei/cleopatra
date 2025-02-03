@@ -22,7 +22,7 @@ export const Header = ({ className, children, ref, ...props }: HeaderProps) => (
 	>
 		<Nav className="max-md:hidden" />
 		<Menu className="md:hidden" />
-		<Logo className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2" />
+		<Logo className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2" />
 		<Link href="#contact" className={buttonVariants({ size: "lg", className: "rounded-none" })}>
 			Contact
 		</Link>
@@ -90,7 +90,7 @@ export const Menu = ({ className, ...props }: MobileNavProps) => {
 			</Button>
 
 			{open && (
-				<ul className="bg-background absolute left-0 top-[110%] rounded-md border p-2">
+				<ul className="bg-background absolute top-[110%] left-0 rounded-md border p-2">
 					{routes.map((route) => (
 						<li key={route.href}>
 							<Link href={route.href} className={buttonVariants({ variant: "link" })}>

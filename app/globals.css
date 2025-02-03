@@ -1,34 +1,48 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme {
+	--color-background: #fff;
+	--color-foreground: #030303;
+
+	--color-card: #fff;
+	--color-card-foreground: #030303;
+
+	--color-popover: #fff;
+	--color-popover-foreground: #030303;
+
+	--color-primary: #090909;
+	--color-primary-foreground: #fff;
+
+	--color-secondary: #f2f2f2;
+	--color-secondary-foreground: #3b3b3b;
+
+	--color-muted: #f2f2f2;
+	--color-muted-foreground: #6f6f6f;
+
+	--color-accent: #f2f2f2;
+	--color-accent-foreground: #090909;
+
+	--color-destructive: #f44336;
+	--color-destructive-foreground: #fff;
+
+	--color-border: #e2e2e2;
+	--color-input: #e2e2e2;
+	--color-ring: #030303;
+
+	--radius-lg: 0.5rem;
+	--radius-md: calc(0.5rem - 2px);
+	--radius-sm: calc(0.5rem - 4px);
+}
 
 @layer base {
-	:root {
-		--background: 0 0% 100%;
-		--foreground: 0 0% 3.9%;
-		--card: 0 0% 100%;
-		--card-foreground: 0 0% 3.9%;
-		--popover: 0 0% 100%;
-		--popover-foreground: 0 0% 3.9%;
-		--primary: 0 0% 9%;
-		--primary-foreground: 0 0% 98%;
-		--secondary: 0 0% 96.1%;
-		--secondary-foreground: 0 0% 24%;
-		--muted: 0 0% 96.1%;
-		--muted-foreground: 0 0% 45.1%;
-		--accent: 0 0% 96.1%;
-		--accent-foreground: 0 0% 9%;
-		--destructive: 0 84.2% 60.2%;
-		--destructive-foreground: 0 0% 98%;
-		--border: 0 0% 89.8%;
-		--input: 0 0% 89.8%;
-		--ring: 0 0% 3.9%;
-		--chart-1: 12 76% 61%;
-		--chart-2: 173 58% 39%;
-		--chart-3: 197 37% 24%;
-		--chart-4: 43 74% 66%;
-		--chart-5: 27 87% 67%;
-		--radius: 0.5rem;
+	*,
+	::after,
+	::before,
+	::backdrop,
+	::file-selector-button {
+		border-color: var(--color-gray-200, currentColor);
 	}
 }
 

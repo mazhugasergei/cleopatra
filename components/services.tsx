@@ -63,7 +63,7 @@ export const Services = ({ className, ...props }: ServicesProps) => {
 	return (
 		<section id="services" className={cn("space-y-2", className)} {...props}>
 			<h2 className="text-center text-4xl font-bold">Our services</h2>
-			<p className="text-balance text-center">
+			<p className="text-center text-balance">
 				We source, dismantle, and ship cars and parts worldwide. Reliable, efficient, and hassle-free.
 			</p>
 
