@@ -3,33 +3,33 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme {
-	--color-background: #fff;
-	--color-foreground: #030303;
+	--color-background: hsl(0 0% 100%);
+	--color-foreground: hsl(0 0% 3.9%);
 
-	--color-card: #fff;
-	--color-card-foreground: #030303;
+	--color-card: hsl(0 0% 100%);
+	--color-card-foreground: hsl(0 0% 3.9%);
 
-	--color-popover: #fff;
-	--color-popover-foreground: #030303;
+	--color-popover: hsl(0 0% 100%);
+	--color-popover-foreground: hsl(0 0% 3.9%);
 
-	--color-primary: #090909;
-	--color-primary-foreground: #fff;
+	--color-primary: hsl(0 0% 9%);
+	--color-primary-foreground: hsl(0 0% 98%);
 
-	--color-secondary: #f2f2f2;
-	--color-secondary-foreground: #3b3b3b;
+	--color-secondary: hsl(0 0% 96.1%);
+	--color-secondary-foreground: hsl(0 0% 24%);
 
-	--color-muted: #f2f2f2;
-	--color-muted-foreground: #6f6f6f;
+	--color-muted: hsl(0 0% 96.1%);
+	--color-muted-foreground: hsl(0 0% 45.1%);
 
-	--color-accent: #f2f2f2;
-	--color-accent-foreground: #090909;
+	--color-accent: hsl(0 0% 96.1%);
+	--color-accent-foreground: hsl(0 0% 9%);
 
-	--color-destructive: #f44336;
-	--color-destructive-foreground: #fff;
+	--color-destructive: hsl(0 84.2% 60.2%);
+	--color-destructive-foreground: hsl(0 0% 98%);
 
-	--color-border: #e2e2e2;
-	--color-input: #e2e2e2;
-	--color-ring: #030303;
+	--color-border: hsl(0 0% 89.8%);
+	--color-input: hsl(0 0% 89.8%);
+	--color-ring: hsl(0 0% 3.9%);
 
 	--radius-lg: 0.5rem;
 	--radius-md: calc(0.5rem - 2px);
