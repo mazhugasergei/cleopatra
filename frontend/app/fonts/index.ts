@@ -5,9 +5,9 @@
 // 	subsets: ["latin"],
 // })
 
-import localFont from "next/font/local"
+import localFont from "next/font/local";
 
 export const headingFont = localFont({
-	src: "./Montserrat-Bold.ttf",
-	display: "swap",
-})
+  src: "./Montserrat-Bold.ttf",
+  display: "swap",
+});
