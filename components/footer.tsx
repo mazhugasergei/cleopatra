@@ -8,7 +8,7 @@ export interface FooterProps extends React.HTMLAttributes<HTMLDivElement> {
 
 export const Footer = ({ className, ...props }: FooterProps) => (
 	<footer className={cn("flex items-center justify-between gap-4 border-t py-8", className)} {...props}>
-		<Logo full />
+		<Logo full className="max-sm:text-base" />
 		<Socials />
 	</footer>
 )
