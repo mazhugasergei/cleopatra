@@ -76,14 +76,8 @@ export const Menu = ({ className, ...props }: MobileNavProps) => {
 
 	React.useEffect(() => {
 		const close = () => setOpen(false)
-
 		window.addEventListener("scroll", close)
-		window.addEventListener("touchstart", close)
-
-		return () => {
-			window.removeEventListener("scroll", close)
-			window.removeEventListener("touchstart", close)
-		}
+		return () => window.removeEventListener("scroll", close)
 	}, [])
 
 	return (
