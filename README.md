@@ -1,1 +1,1 @@
-![Cleopatra Trading Co.](./public/banner.jpg)
+![Cleopatra Trading Co.](./images/banner.jpg)
