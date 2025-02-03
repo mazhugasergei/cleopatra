@@ -62,7 +62,7 @@ export const Tabs = ({ data, className, ...props }: ListProps) => {
 	}
 
 	return (
-		<div {...props}>
+		<div className={cn("space-y-8", className)} {...props}>
 			{/* tabs */}
 			<div className="relative overflow-hidden border-b">
 				<ul
