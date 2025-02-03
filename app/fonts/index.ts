@@ -8,6 +8,6 @@
 import localFont from "next/font/local"
 
 export const headingFont = localFont({
-	src: "./fonts/Montserrat-Bold.ttf",
+	src: "./Montserrat-Bold.ttf",
 	display: "swap",
 })
