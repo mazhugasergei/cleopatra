@@ -1,5 +1,6 @@
 import { cn } from "@/helpers/tailwind"
 import containers from "@/public/containers.jpg"
+import parts from "@/public/parts.jpg"
 import React from "react"
 import { Tabs, TabsData } from "./tabs"
 import { TabsContent } from "./tabs-content"
@@ -14,7 +15,10 @@ const services: TabsData = [
 	{
 		name: "Spare parts selection",
 		content: (
-			<TabsContent description="We provide a wide range of high-quality spare parts for Korean, German, American, and other top-brand vehicles. Our team carefully selects and supplies reliable parts to meet your needs, ensuring quality, durability, and worldwide delivery." />
+			<TabsContent
+				description="We provide a wide range of high-quality spare parts for Korean, German, American, and other top-brand vehicles. Our team carefully selects and supplies reliable parts to meet your needs, ensuring quality, durability, and worldwide delivery."
+				image={parts}
+			/>
 		),
 	},
 	{
