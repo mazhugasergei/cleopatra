@@ -1,6 +1,6 @@
 "use client"
 
-import { CloseIcon, MenuIcon } from "@/app/icons"
+import { CloseIcon, MenuIcon, PhoneIcon } from "@/app/icons"
 import { cn } from "@/helpers/tailwind"
 import Link from "next/link"
 import React from "react"
@@ -23,7 +23,10 @@ export const Header = ({ className, children, ref, ...props }: HeaderProps) => (
 		<Nav className="max-md:hidden" />
 		<Menu className="md:hidden" />
 		<Logo className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2" />
-		<Link href="#contact" className={buttonVariants({ size: "lg", className: "rounded-none" })}>
+		<Link href="#contact" className={buttonVariants({ size: "icon", className: "rounded-none sm:hidden" })}>
+			<PhoneIcon size={18} />
+		</Link>
+		<Link href="#contact" className={buttonVariants({ size: "lg", className: "rounded-none max-sm:hidden" })}>
 			Contact
 		</Link>
 	</header>
