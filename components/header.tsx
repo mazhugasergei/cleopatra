@@ -82,12 +82,17 @@ export const Menu = ({ className, ...props }: MobileNavProps) => {
 
 	return (
 		<div className={cn("relative", className)} {...props}>
-			<Button variant="ghost" size="icon" onClick={() => setOpen((prev) => !prev)} className={cn(open && "bg-accent")}>
+			<Button
+				variant="ghost"
+				size="icon"
+				onClick={() => setOpen((prev) => !prev)}
+				className={cn("rounded-none", open && "bg-accent")}
+			>
 				{open ? <CloseIcon /> : <MenuIcon />}
 			</Button>
 
 			{open && (
-				<ul className="bg-background absolute top-[110%] left-0 rounded-md border p-2">
+				<ul className="bg-background absolute top-[110%] left-0 border p-2">
 					{routes.map((route) => (
 						<li key={route.href}>
 							<Link href={route.href} className={buttonVariants({ variant: "link" })}>
