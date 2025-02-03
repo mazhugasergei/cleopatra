@@ -15,9 +15,10 @@ export const About = ({ className, ...props }: AboutProps) => {
 				width={1000}
 				height={1000}
 				placeholder="blur"
-				className="inset-0 h-full rounded-xl object-cover object-[50%_20%] max-md:aspect-[16/9]"
+				className="inset-0 h-full rounded-xl object-cover object-[50%_20%] max-md:aspect-[16/9] md:aspect-[4/3]"
 			/>
-			<div className="space-y-4 py-4">
+
+			<div className="space-y-4 self-center py-4">
 				<h2 className="border-b pb-4 text-4xl font-bold">About us</h2>
 				<p>
 					At Cleopatra Trading Co., we specialize in sourcing and delivering vehicles and spare parts worldwide. Based
