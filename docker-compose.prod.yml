@@ -1,0 +1,12 @@
+services:
+  backend:
+    build:
+      target: runner
+    environment:
+      - NODE_ENV=production
+
+  frontend:
+    build:
+      target: runner
+    environment:
+      - NODE_ENV=production
