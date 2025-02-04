@@ -2,6 +2,8 @@ services:
   backend:
     build:
       target: dev
+    ports:
+      - "3001:3001"
     volumes:
       - ./backend:/app
       - /app/node_modules
@@ -11,6 +13,8 @@ services:
   frontend:
     build:
       target: dev
+    ports:
+      - "3000:3000"
     volumes:
       - ./frontend:/app
       - /app/node_modules
