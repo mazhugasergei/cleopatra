@@ -24,3 +24,8 @@ services:
       # - NEXT_PUBLIC_HMR_HOST=http://frontend # for Linux
       # - WATCHPACK_POLLING=true # webpack
       # - TURBOPACK_WATCH_POLLING=true # turbopack
+
+  nginx:
+    depends_on:
+      - backend
+      - frontend
