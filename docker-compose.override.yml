@@ -20,3 +20,7 @@ services:
       - /app/node_modules
     environment:
       - NODE_ENV=development
+      # - NEXT_PUBLIC_HMR_HOST=http://host.docker.internal # for macOS/Windows
+      # - NEXT_PUBLIC_HMR_HOST=http://frontend # for Linux
+      # - WATCHPACK_POLLING=true # webpack
+      # - TURBOPACK_WATCH_POLLING=true # turbopack

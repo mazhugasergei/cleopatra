@@ -40,6 +40,10 @@ docker-compose up --build
 docker-compose down
 ```
 
+### Troubleshooting
+
+If Hot Module Replacement (changes on save) does not work, check `docker-compose.override.yml` environment and uncomment some variables.
+
 ## Running in Production Mode
 
 Docker will pick `docker-compose.yml` as the base and `docker-compose.prod.yml` that will run services in **prod** mode.

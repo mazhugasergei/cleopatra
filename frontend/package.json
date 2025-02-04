@@ -17,6 +17,7 @@
 		"tailwindcss-animate": "^1.0.7"
 	},
 	"devDependencies": {
+		"@builder.io/partytown": "^0.10.3",
 		"@chromatic-com/storybook": "^3.2.4",
 		"@storybook/addon-essentials": "^8.5.2",
 		"@storybook/addon-interactions": "^8.5.2",

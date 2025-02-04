@@ -12,7 +12,7 @@ services:
     restart: unless-stopped
     healthcheck:
       test: ["CMD", "wget", "--spider", "-q", "http://localhost:3001"]
-      interval: 10s
+      interval: 5s
       retries: 3
 
   frontend:
@@ -28,7 +28,7 @@ services:
     restart: unless-stopped
     healthcheck:
       test: ["CMD", "wget", "--spider", "-q", "http://localhost:3000"]
-      interval: 10s
+      interval: 5s
       retries: 3
 
   nginx:
