@@ -5,6 +5,7 @@ const nextConfig: NextConfig = {
 	experimental: {
 		nextScriptWorkers: true,
 	},
+	logging: false,
 }
 
 export default nextConfig
