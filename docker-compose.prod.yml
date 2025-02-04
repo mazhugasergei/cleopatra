@@ -4,9 +4,24 @@ services:
       target: runner
     environment:
       - NODE_ENV=production
+    healthcheck:
+      test: ["CMD", "wget", "--spider", "-q", "http://localhost:3001"]
+      interval: 10s
+      retries: 3
 
   frontend:
     build:
       target: runner
     environment:
       - NODE_ENV=production
+    healthcheck:
+      test: ["CMD", "wget", "--spider", "-q", "http://localhost:3000"]
+      interval: 10s
+      retries: 3
+
+  nginx:
+    depends_on:
+      backend:
+        condition: service_healthy
+      frontend:
+        condition: service_healthy
