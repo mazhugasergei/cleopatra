@@ -20,11 +20,15 @@ export const Hero = ({ className, ...props }: HeroProps) => {
 				width={1000}
 				height={1000}
 				placeholder="blur"
+				data-test="hero-image"
 				className="pointer-events-none h-full w-full rounded-xl object-cover object-[40%_0%] sm:order-1"
 			/>
 
 			<div className="pt-6 md:px-8 md:py-10">
-				<h1 className={cn(headingFont.className, "flex flex-col text-[3rem] leading-[1.2] font-bold")}>
+				<h1
+					data-test="hero-heading"
+					className={cn(headingFont.className, "flex flex-col text-[3rem] leading-[1.2] font-bold")}
+				>
 					<span>Dont just </span>
 					<span>get it. </span>
 					<span>Drive it.</span>
