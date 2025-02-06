@@ -11,7 +11,7 @@ export const TabsContent = ({ description, image, className, ...props }: TabsCon
 	<div className={cn("grid grid-cols-1 gap-10 md:grid-cols-2", className)} {...props}>
 		<div>{description}</div>
 		{image && (
-			<div className="bg-secondary overflow-hidden rounded-xl">
+			<div className="bg-secondary overflow-hidden">
 				<Image
 					src={image}
 					alt=""

@@ -8,7 +8,7 @@ export interface ContactProps extends React.HTMLAttributes<HTMLDivElement> {
 
 export const Contact = ({ className, ...props }: ContactProps) => {
 	return (
-		<section id="contact" className="grid grid-cols-1 gap-4 md:grid-cols-[7fr_10fr]" {...props}>
+		<section id="contact" className="wrapper grid grid-cols-1 gap-4 md:grid-cols-[7fr_10fr]" {...props}>
 			<div>
 				<h2 data-test="contact-heading" className="text-4xl font-bold">
 					Contact us

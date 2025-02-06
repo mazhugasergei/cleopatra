@@ -8,14 +8,18 @@ export interface AboutProps extends React.HTMLAttributes<HTMLDivElement> {
 
 export const About = ({ className, ...props }: AboutProps) => {
 	return (
-		<section id="about" className={cn("grid grid-cols-1 gap-4 md:grid-cols-[7fr_10fr] md:gap-8", className)} {...props}>
+		<section
+			id="about"
+			className={cn("wrapper grid grid-cols-1 gap-4 md:grid-cols-[7fr_10fr] md:gap-8", className)}
+			{...props}
+		>
 			<Image
 				src={about}
 				alt=""
 				width={1000}
 				height={1000}
 				placeholder="blur"
-				className="inset-0 h-full rounded-xl object-cover object-[50%_20%] max-md:aspect-[16/9] md:aspect-[4/3]"
+				className="inset-0 h-full object-cover object-[50%_20%] max-md:aspect-[16/9] md:aspect-[4/3]"
 			/>
 
 			<div className="space-y-4 self-center py-4">

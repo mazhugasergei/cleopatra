@@ -11,25 +11,36 @@ export interface HeaderProps extends React.HTMLAttributes<HTMLDivElement> {
 	ref?: React.Ref<HTMLDivElement>
 }
 
-export const Header = ({ className, children, ref, ...props }: HeaderProps) => (
-	<header
-		ref={ref}
-		data-test="header"
-		className={cn(
-			"bg-background relative sticky top-0 z-50 flex items-center justify-between border-b py-2",
-			className
-		)}
-		{...props}
-	>
-		<Nav className="max-md:hidden" />
-		<Menu className="md:hidden" />
-		<Logo className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2" />
-		<Link href="#contact" data-test="contact-link" className={buttonVariants({ className: "rounded-none" })}>
-			<PhoneIcon size={18} className="sm:hidden" />
-			<span className="max-sm:hidden">Contact</span>
-		</Link>
-	</header>
-)
+export const Header = ({ className, children, ref, ...props }: HeaderProps) => {
+	const [isAtTop, setIsAtTop] = React.useState(true)
+
+	React.useEffect(() => {
+		const handleScroll = () => {
+			setIsAtTop(window.scrollY === 0)
+		}
+		window.addEventListener("scroll", handleScroll)
+		return () => window.removeEventListener("scroll", handleScroll)
+	})
+
+	return (
+		<header
+			ref={ref}
+			data-test="header"
+			className={cn("relative", isAtTop ? "bg-transparent" : "bg-background", isAtTop && "invert", className)}
+			{...props}
+		>
+			<div className={cn("wrapper flex items-center justify-between border-b py-2", isAtTop && "border-transparent")}>
+				<Nav className="max-md:hidden" />
+				<Menu className="md:hidden" />
+				<Logo className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2" />
+				<Link href="#contact" data-test="contact-link" className={buttonVariants({ className: "rounded-none" })}>
+					<PhoneIcon size={18} className="sm:hidden" />
+					<span className="max-sm:hidden">Contact</span>
+				</Link>
+			</div>
+		</header>
+	)
+}
 
 export const routes = [
 	{

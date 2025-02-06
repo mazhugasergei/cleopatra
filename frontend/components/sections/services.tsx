@@ -38,7 +38,7 @@ export interface ServicesProps extends React.HTMLAttributes<HTMLDivElement> {
 
 export const Services = ({ className, ...props }: ServicesProps) => {
 	return (
-		<section id="services" className={cn("space-y-2", className)} {...props}>
+		<section id="services" className={cn("wrapper space-y-2", className)} {...props}>
 			<h2 data-test="services-heading" className="text-center text-4xl font-bold">
 				Our services
 			</h2>

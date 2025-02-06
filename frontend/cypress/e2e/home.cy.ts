@@ -8,7 +8,7 @@ beforeEach(() => {
 
 describe("viewport", () => {
 	context("components fully in viewport", () => {
-		const components = ["header", "hero-heading", "hero-description"]
+		const components = ["header", "hero"]
 		components.forEach((component) => {
 			it(`should fully contain ${component}`, () => {
 				cy.getByData(component).should("be.fullyInViewport")
@@ -39,11 +39,11 @@ context("header", () => {
 
 	context("contact button", () => {
 		it("should be visible", () => {
-			cy.getByData("header").getByData("contact-button").should("be.visible")
+			cy.getByData("header").findByData("contact-link").should("be.visible")
 		})
 
 		it("should redirect to contact section", () => {
-			cy.getByData("header").getByData("contact-button").click()
+			cy.getByData("header").getByData("contact-link").click()
 			cy.url().should("match", /#contact$/)
 		})
 	})

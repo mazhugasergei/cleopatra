@@ -10,7 +10,7 @@ export const Map = ({ className, ...props }: MapProps) => (
 		allowFullScreen
 		loading="lazy"
 		referrerPolicy="no-referrer-when-downgrade"
-		className={cn("bg-secondary h-full w-full rounded-xl border", className)}
+		className={cn("bg-secondary h-full w-full border", className)}
 		{...props}
 	/>
 )

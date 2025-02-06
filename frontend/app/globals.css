@@ -75,3 +75,7 @@ body {
 .scrollbar-hide::-webkit-scrollbar {
 	display: none;
 }
+
+.wrapper {
+	@apply mx-auto max-w-[86rem] px-4;
+}
