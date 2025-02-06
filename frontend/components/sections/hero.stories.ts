@@ -1,9 +1,9 @@
-import { About } from "@/components/about"
+import { Hero } from "@/components/sections/hero"
 import type { Meta, StoryObj } from "@storybook/react"
 
-const meta: Meta<typeof About> = {
-	title: "About",
-	component: About,
+const meta: Meta<typeof Hero> = {
+	title: "Cleopatra/Sections/Hero",
+	component: Hero,
 	parameters: {
 		layout: "fullscreen",
 	},
@@ -19,10 +19,4 @@ const meta: Meta<typeof About> = {
 export default meta
 type Story = StoryObj<typeof meta>
 
-const defaultArgs: Partial<Story["args"]> = {}
-
-export const Default: Story = {
-	args: {
-		...defaultArgs,
-	},
-}
+export const Default: Story = {}

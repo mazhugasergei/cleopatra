@@ -1,11 +1,11 @@
-import { Logo } from "@/components/logo"
+import { Services } from "@/components/sections/services"
 import type { Meta, StoryObj } from "@storybook/react"
 
-const meta: Meta<typeof Logo> = {
-	title: "Cleopatra/Components/Logo",
-	component: Logo,
+const meta: Meta<typeof Services> = {
+	title: "Cleopatra/Sections/Services",
+	component: Services,
 	parameters: {
-		layout: "centered",
+		layout: "fullscreen",
 	},
 	tags: ["autodocs"],
 	argTypes: {

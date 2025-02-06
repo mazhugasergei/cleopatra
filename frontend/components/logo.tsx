@@ -1,4 +1,4 @@
-import { headingFont } from "@/app/fonts"
+import { headingFont } from "@/fonts"
 import { cn } from "@/helpers/tailwind"
 import Link from "next/link"
 

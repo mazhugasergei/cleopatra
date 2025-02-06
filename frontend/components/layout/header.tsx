@@ -4,8 +4,8 @@ import { CloseIcon, MenuIcon, PhoneIcon } from "@/app/icons"
 import { cn } from "@/helpers/tailwind"
 import Link from "next/link"
 import React from "react"
-import { Button, buttonVariants } from "./button"
-import { Logo } from "./logo"
+import { Logo } from "../logo"
+import { Button, buttonVariants } from "../ui/button"
 
 export interface HeaderProps extends React.HTMLAttributes<HTMLDivElement> {
 	ref?: React.Ref<HTMLDivElement>

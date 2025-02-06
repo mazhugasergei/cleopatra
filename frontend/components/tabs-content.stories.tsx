@@ -2,7 +2,7 @@ import { TabsContent } from "@/components/tabs-content"
 import type { Meta, StoryObj } from "@storybook/react"
 
 const meta: Meta<typeof TabsContent> = {
-	title: "TabsContent",
+	title: "Cleopatra/Components/TabsContent",
 	component: TabsContent,
 	parameters: {
 		layout: "fullscreen",

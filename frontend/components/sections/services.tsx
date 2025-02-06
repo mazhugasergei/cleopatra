@@ -2,8 +2,8 @@ import { cn } from "@/helpers/tailwind"
 import containers from "@/public/containers.jpg"
 import parts from "@/public/parts.jpg"
 import React from "react"
-import { Tabs, TabsData } from "./tabs"
-import { TabsContent } from "./tabs-content"
+import { Tabs, TabsData } from "../tabs"
+import { TabsContent } from "../tabs-content"
 
 const services: TabsData = [
 	{

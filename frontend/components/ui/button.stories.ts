@@ -1,8 +1,8 @@
-import { Button, defaultVariants, variants } from "@/components/button"
+import { Button, defaultVariants, variants } from "@/components/ui/button"
 import type { Meta, StoryObj } from "@storybook/react"
 
 const meta: Meta<typeof Button> = {
-	title: "Button",
+	title: "Cleopatra/UI/Button",
 	component: Button,
 	parameters: {
 		layout: "centered",

@@ -3,7 +3,7 @@ import type { Meta, StoryObj } from "@storybook/react"
 import { TabsContent } from "./tabs-content"
 
 const meta: Meta<typeof Tabs> = {
-	title: "Tabs",
+	title: "Cleopatra/Components/Tabs",
 	component: Tabs,
 	parameters: {
 		layout: "fullscreen",

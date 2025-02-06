@@ -3,7 +3,7 @@ import Layout from "./layout"
 import Page from "./page"
 
 const meta: Meta<typeof Layout> = {
-	title: "Page",
+	title: "Cleopatra/Pages/Page",
 	component: Layout,
 	parameters: {
 		layout: "fullscreen",

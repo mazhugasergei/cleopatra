@@ -1,8 +1,8 @@
-import { headingFont } from "@/app/fonts"
+import { headingFont } from "@/fonts"
 import { cn } from "@/helpers/tailwind"
 import kiaK5 from "@/public/kia-k5.jpg"
 import Image from "next/image"
-import { Contacts } from "./contact"
+import { Contacts } from "../contacts"
 
 export interface HeroProps extends React.HTMLAttributes<HTMLDivElement> {
 	ref?: React.Ref<HTMLDivElement>

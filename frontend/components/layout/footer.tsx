@@ -1,6 +1,6 @@
 import { cn } from "@/helpers/tailwind"
-import { Socials } from "./contact"
-import { Logo } from "./logo"
+import { Logo } from "../logo"
+import { Socials } from "../socials"
 
 export interface FooterProps extends React.HTMLAttributes<HTMLDivElement> {
 	ref?: React.Ref<HTMLDivElement>

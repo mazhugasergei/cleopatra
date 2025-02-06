@@ -1,8 +1,8 @@
-import { Input } from "@/components/input"
+import { Input } from "@/components/ui/input"
 import type { Meta, StoryObj } from "@storybook/react"
 
 const meta: Meta<typeof Input> = {
-	title: "Input",
+	title: "Cleopatra/UI/Input",
 	component: Input,
 	parameters: {
 		layout: "centered",

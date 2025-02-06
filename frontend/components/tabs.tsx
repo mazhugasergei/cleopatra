@@ -2,7 +2,7 @@
 
 import { cn } from "@/helpers/tailwind"
 import React from "react"
-import { buttonVariants } from "./button"
+import { buttonVariants } from "./ui/button"
 
 export type TabsData = {
 	name: string

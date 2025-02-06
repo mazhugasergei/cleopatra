@@ -1,11 +1,11 @@
-import { Logo } from "@/components/logo"
+import { Footer } from "@/components/layout/footer"
 import type { Meta, StoryObj } from "@storybook/react"
 
-const meta: Meta<typeof Logo> = {
-	title: "Cleopatra/Components/Logo",
-	component: Logo,
+const meta: Meta<typeof Footer> = {
+	title: "Cleopatra/Layout/Footer",
+	component: Footer,
 	parameters: {
-		layout: "centered",
+		layout: "fullscreen",
 	},
 	tags: ["autodocs"],
 	argTypes: {

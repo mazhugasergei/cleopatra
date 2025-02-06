@@ -1,9 +1,9 @@
-import { Footer } from "@/components/footer"
+import { Header } from "@/components/layout/header"
 import type { Meta, StoryObj } from "@storybook/react"
 
-const meta: Meta<typeof Footer> = {
-	title: "Footer",
-	component: Footer,
+const meta: Meta<typeof Header> = {
+	title: "Cleopatra/Layout/Header",
+	component: Header,
 	parameters: {
 		layout: "fullscreen",
 	},
@@ -19,10 +19,4 @@ const meta: Meta<typeof Footer> = {
 export default meta
 type Story = StoryObj<typeof meta>
 
-const defaultArgs: Partial<Story["args"]> = {}
-
-export const Default: Story = {
-	args: {
-		...defaultArgs,
-	},
-}
+export const Default: Story = {}

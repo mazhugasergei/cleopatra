@@ -1,9 +1,9 @@
-import { Logo } from "@/components/logo"
+import { Contacts } from "@/components/contacts"
 import type { Meta, StoryObj } from "@storybook/react"
 
-const meta: Meta<typeof Logo> = {
-	title: "Cleopatra/Components/Logo",
-	component: Logo,
+const meta: Meta<typeof Contacts> = {
+	title: "Cleopatra/Components/Contacts",
+	component: Contacts,
 	parameters: {
 		layout: "centered",
 	},

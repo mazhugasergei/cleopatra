@@ -1,15 +1,19 @@
-import { Header } from "@/components/header"
+import { Phones } from "@/components/phones"
 import type { Meta, StoryObj } from "@storybook/react"
 
-const meta: Meta<typeof Header> = {
-	title: "Header",
-	component: Header,
+const meta: Meta<typeof Phones> = {
+	title: "Cleopatra/Components/Phones",
+	component: Phones,
 	parameters: {
-		layout: "fullscreen",
+		layout: "centered",
 	},
 	tags: ["autodocs"],
 	argTypes: {
 		ref: {
+			table: { disable: true },
+			control: false,
+		},
+		className: {
 			table: { disable: true },
 			control: false,
 		},
@@ -19,10 +23,8 @@ const meta: Meta<typeof Header> = {
 export default meta
 type Story = StoryObj<typeof meta>
 
-const defaultArgs: Partial<Story["args"]> = {}
-
 export const Default: Story = {
 	args: {
-		...defaultArgs,
+		className: "aspect-[1/1]",
 	},
 }
