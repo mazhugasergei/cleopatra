@@ -20,7 +20,7 @@ export const Hero = ({ className, ...props }: HeroProps) => {
 				height={1500}
 				placeholder="blur"
 				data-test="hero-image"
-				className="pointer-events-none absolute inset-0 h-full w-full object-cover object-[40%_0%] sm:order-1"
+				className="pointer-events-none absolute inset-0 h-full w-full object-cover sm:order-1"
 			/>
 
 			<div className="absolute inset-0 bg-black/80 text-white">
