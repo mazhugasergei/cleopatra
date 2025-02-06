@@ -10,6 +10,7 @@ export const About = ({ className, ...props }: AboutProps) => {
 	return (
 		<section
 			id="about"
+			data-test="about"
 			className={cn("wrapper grid grid-cols-1 gap-4 md:grid-cols-[7fr_10fr] md:gap-8", className)}
 			{...props}
 		>
@@ -23,9 +24,7 @@ export const About = ({ className, ...props }: AboutProps) => {
 			/>
 
 			<div className="space-y-4 self-center py-4">
-				<h2 data-test="about-heading" className="border-b pb-4 text-4xl font-bold">
-					About us
-				</h2>
+				<h2 className="border-b pb-4 text-4xl font-bold">About us</h2>
 				<p>
 					At Cleopatra Trading Co., we specialize in sourcing and delivering vehicles and spare parts worldwide. Based
 					in Incheon, South Korea, we provide a seamless experience for customers looking for Korean, German, American,

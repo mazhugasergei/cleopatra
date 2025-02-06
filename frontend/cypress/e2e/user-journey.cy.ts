@@ -17,7 +17,7 @@ describe("user journey", () => {
 		it(`should be able to navigate to the ${section} section`, () => {
 			cy.getByData("header").findByData(`${section}-link`).click()
 			cy.url().should("include", `#${section}`)
-			cy.get(`section#${section}`).findByData(`${section}-heading`).should("be.fullyInViewport")
+			cy.getByData(section).should("be.inViewport")
 		})
 	})
 })

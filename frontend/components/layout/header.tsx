@@ -63,7 +63,7 @@ export interface NavProps extends React.HTMLAttributes<HTMLDivElement> {
 
 export const Nav = (props: NavProps) => {
 	return (
-		<nav data-test="nav" {...props}>
+		<nav {...props}>
 			<ul className="flex items-center">
 				{routes.map((route) => (
 					<li key={route.href}>

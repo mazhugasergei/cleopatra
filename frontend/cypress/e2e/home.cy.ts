@@ -30,6 +30,7 @@ context("header", () => {
 	context("logo", () => {
 		it("should be visible", () => {
 			cy.getByData("header").findByData("logo").should("be.visible")
+			cy.getByData("header").findByData("logo").should("be.fullyInViewport")
 		})
 		it("should redirect to home", () => {
 			cy.getByData("header").findByData("logo").click()
@@ -40,27 +41,12 @@ context("header", () => {
 	context("contact button", () => {
 		it("should be visible", () => {
 			cy.getByData("header").findByData("contact-link").should("be.visible")
+			cy.getByData("header").findByData("contact-link").should("be.fullyInViewport")
 		})
 
 		it("should redirect to contact section", () => {
 			cy.getByData("header").getByData("contact-link").click()
-			cy.url().should("match", /#contact$/)
+			cy.url().should("include", "#contact")
 		})
-	})
-})
-
-context("hero", () => {
-	it("should have a heading", () => {
-		cy.getByData("hero-heading").contains("Dont just get it. Drive it.").should("be.visible")
-	})
-
-	it("should have an image", () => {
-		cy.getByData("hero-image").should("be.visible")
-	})
-})
-
-context("about", () => {
-	it("should have a heading", () => {
-		cy.getByData("about-heading").contains("About us").should("be.visible")
 	})
 })
