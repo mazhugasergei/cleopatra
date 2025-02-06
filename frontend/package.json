@@ -4,6 +4,7 @@
 		"build": "next build",
 		"start": "next start",
 		"format": "prettier --write .",
+		"cypress": "cypress open",
 		"storybook": "storybook dev -p 6006",
 		"build-storybook": "storybook build"
 	},
