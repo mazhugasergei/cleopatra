@@ -8,7 +8,7 @@ export interface LogoProps extends React.HTMLAttributes<HTMLAnchorElement> {
 }
 
 export const Logo = ({ full, className, ...props }: LogoProps) => (
-	<Link href="/" className={cn(headingFont.className, "text-xl font-bold", className)} {...props}>
+	<Link href="/" data-test="logo" className={cn(headingFont.className, "text-xl font-bold", className)} {...props}>
 		{full ? "CLEOPATRA TRADING CO." : "CLEOPATRA"}
 	</Link>
 )

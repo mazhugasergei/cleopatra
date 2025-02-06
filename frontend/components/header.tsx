@@ -14,6 +14,7 @@ export interface HeaderProps extends React.HTMLAttributes<HTMLDivElement> {
 export const Header = ({ className, children, ref, ...props }: HeaderProps) => (
 	<header
 		ref={ref}
+		data-test="header"
 		className={cn(
 			"bg-background relative sticky top-0 z-50 flex items-center justify-between border-b py-2",
 			className
@@ -23,11 +24,9 @@ export const Header = ({ className, children, ref, ...props }: HeaderProps) => (
 		<Nav className="max-md:hidden" />
 		<Menu className="md:hidden" />
 		<Logo className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2" />
-		<Link href="#contact" className={buttonVariants({ size: "icon", className: "rounded-none sm:hidden" })}>
-			<PhoneIcon size={18} />
-		</Link>
-		<Link href="#contact" className={buttonVariants({ size: "lg", className: "rounded-none max-sm:hidden" })}>
-			Contact
+		<Link href="#contact" data-test="contact-link" className={buttonVariants({ className: "rounded-none" })}>
+			<PhoneIcon size={18} className="sm:hidden" />
+			<span className="max-sm:hidden">Contact</span>
 		</Link>
 	</header>
 )
@@ -53,11 +52,15 @@ export interface NavProps extends React.HTMLAttributes<HTMLDivElement> {
 
 export const Nav = (props: NavProps) => {
 	return (
-		<nav {...props}>
+		<nav data-test="nav" {...props}>
 			<ul className="flex items-center">
 				{routes.map((route) => (
 					<li key={route.href}>
-						<Link href={route.href} className={buttonVariants({ variant: "link" })}>
+						<Link
+							href={route.href}
+							data-test={`${route.href.replace(/#/g, "")}-link`}
+							className={buttonVariants({ variant: "link" })}
+						>
 							{route.label}
 						</Link>
 					</li>

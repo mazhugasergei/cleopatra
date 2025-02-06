@@ -11,6 +11,7 @@ export interface HeroProps extends React.HTMLAttributes<HTMLDivElement> {
 export const Hero = ({ className, ...props }: HeroProps) => {
 	return (
 		<section
+			data-test="hero"
 			className={cn("grid gap-4 pt-10 sm:grid-cols-2 md:grid-cols-[8fr_10fr] lg:grid-cols-[7fr_10fr]", className)}
 			{...props}
 		>
@@ -33,7 +34,9 @@ export const Hero = ({ className, ...props }: HeroProps) => {
 					<span>get it. </span>
 					<span>Drive it.</span>
 				</h1>
-				<p className="text-secondary-foreground mt-1 italic">Cars & spare parts, delivered worldwide.</p>
+				<p data-test="hero-description" className="text-secondary-foreground mt-1 italic">
+					Cars & spare parts, delivered worldwide.
+				</p>
 				<Contacts className="mt-4" />
 			</div>
 		</section>
