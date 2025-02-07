@@ -5,11 +5,13 @@ import { Services } from "@/components/sections/services"
 
 export default function Home() {
 	return (
-		<main className="space-y-20 pb-20 md:space-y-32">
+		<main>
 			<Hero />
-			<About />
-			<Services />
-			<Contact />
+			<div className="space-y-20 pb-20 md:space-y-32">
+				<About />
+				<Services />
+				<Contact />
+			</div>
 		</main>
 	)
 }

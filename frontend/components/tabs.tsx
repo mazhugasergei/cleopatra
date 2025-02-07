@@ -80,7 +80,7 @@ export const Tabs = ({ data, className, ...props }: ListProps) => {
 							<li
 								key={item.name}
 								className={cn(
-									"relative flex items-center justify-between border-b-2 border-transparent p-3",
+									"relative flex items-center justify-between border-b-2 border-transparent p-2",
 									selected === index && "border-primary"
 								)}
 							>

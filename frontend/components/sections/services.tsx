@@ -2,6 +2,7 @@ import { cn } from "@/helpers/tailwind"
 import containers from "@/public/containers.jpg"
 import parts from "@/public/parts.jpg"
 import React from "react"
+import { SectionHeader } from "../layout/section-header"
 import { Tabs, TabsData } from "../tabs"
 import { TabsContent } from "../tabs-content"
 
@@ -38,11 +39,8 @@ export interface ServicesProps extends React.HTMLAttributes<HTMLDivElement> {
 
 export const Services = ({ className, ...props }: ServicesProps) => {
 	return (
-		<section id="services" data-test="services" className={cn("wrapper space-y-2", className)} {...props}>
-			<h2 className="text-center text-4xl font-bold">Our services</h2>
-			<p className="text-center text-balance">
-				We source, dismantle, and ship cars and parts worldwide. Reliable, efficient, and hassle-free.
-			</p>
+		<section id="services" data-test="services" className={cn("wrapper", className)} {...props}>
+			<SectionHeader backLink="#about" title="Our services" />
 			<Tabs data={services} />
 		</section>
 	)
