@@ -25,15 +25,13 @@ export const Contact = ({ className, ...props }: ContactProps) => {
 			{...props}
 		>
 			<SectionHeader backLink="#services" title="Contact" />
-			<div className="wrapper">
-				<div className="wrapper grid flex-1 grid-cols-1 gap-4 py-4 md:grid-cols-[7fr_10fr]">
-					<div className="flex flex-col justify-center">
-						<h2 className="text-4xl font-bold">Contact us</h2>
-						<Contacts className="my-4 border-y py-4" />
-						<Socials />
-					</div>
-					<Map />
+			<div className="wrapper grid flex-1 grid-cols-1 gap-4 py-4 md:grid-cols-[7fr_10fr]">
+				<div className="flex flex-col justify-center">
+					<h2 className="text-4xl font-bold">Contact us</h2>
+					<Contacts className="my-4 border-y py-4" />
+					<Socials />
 				</div>
+				<Map />
 			</div>
 		</section>
 	)
