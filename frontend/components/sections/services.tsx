@@ -1,4 +1,3 @@
-import { cn } from "@/helpers/tailwind"
 import containers from "@/public/containers.jpg"
 import parts from "@/public/parts.jpg"
 import React from "react"
@@ -37,11 +36,13 @@ export interface ServicesProps extends React.HTMLAttributes<HTMLDivElement> {
 	ref?: React.Ref<HTMLDivElement>
 }
 
-export const Services = ({ className, ...props }: ServicesProps) => {
+export const Services = (props: ServicesProps) => {
 	return (
-		<section id="services" data-test="services" className={cn("wrapper", className)} {...props}>
+		<section id="services" data-test="services" {...props}>
 			<SectionHeader backLink="#about" title="Our services" />
-			<Tabs data={services} />
+			<div className="wrapper">
+				<Tabs data={services} />
+			</div>
 		</section>
 	)
 }

@@ -20,7 +20,10 @@ export const SectionHeader = ({ backLink, title, className, ...props }: SectionH
 
 	return (
 		<header
-			className={cn("bg-background sticky top-0 z-40 flex items-center justify-between border-b py-2", className)}
+			className={cn(
+				"wrapper bg-background sticky top-0 z-40 flex items-center justify-between border-b py-2",
+				className
+			)}
 			style={{
 				top: height,
 			}}
