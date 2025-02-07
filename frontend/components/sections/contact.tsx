@@ -16,7 +16,7 @@ export const Contact = ({ className, ...props }: ContactProps) => {
 		>
 			<div>
 				<h2 className="text-4xl font-bold">Contact us</h2>
-				<Contacts address={{ withLinks: true }} className="my-4 border-y py-4" />
+				<Contacts className="my-4 border-y py-4" />
 				<Socials />
 			</div>
 			<Map />
