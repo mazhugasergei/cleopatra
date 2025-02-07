@@ -45,7 +45,7 @@ context("header", () => {
 		})
 
 		it("should redirect to contact section", () => {
-			cy.getByData("header").getByData("contact-link").click()
+			cy.getByData("header").findByData("contact-link").eq(0).click()
 			cy.url().should("include", "#contact")
 		})
 	})

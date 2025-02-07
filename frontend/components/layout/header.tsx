@@ -33,9 +33,19 @@ export const Header = ({ className, children, ref, ...props }: HeaderProps) => {
 				<Nav className="max-md:hidden" />
 				<Menu className="md:hidden" />
 				<Logo className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2" />
-				<Link href="#contact" data-test="contact-link" className={buttonVariants({ className: "rounded-none" })}>
-					<PhoneIcon size={18} className="sm:hidden" />
-					<span className="max-sm:hidden">Contact</span>
+				<Link
+					href="#contact"
+					data-test="contact-link"
+					className={buttonVariants({ size: "lg", className: "max-md:hidden" })}
+				>
+					Contact
+				</Link>
+				<Link
+					href="#contact"
+					data-test="contact-link"
+					className={buttonVariants({ size: "icon", className: "md:hidden" })}
+				>
+					<PhoneIcon size={18} />
 				</Link>
 			</div>
 		</header>

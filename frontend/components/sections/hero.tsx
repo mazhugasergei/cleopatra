@@ -78,10 +78,7 @@ export const HeroContent = ({ className, ...props }: HeroContentProps) => (
 				</p>
 			</div>
 
-			<Link
-				href="#about"
-				className={buttonVariants({ variant: "ghost", size: "icon", className: "rounded-none text-white" })}
-			>
+			<Link href="#about" className={buttonVariants({ variant: "ghost", size: "icon" })}>
 				<ChevronDownIcon />
 			</Link>
 		</div>
