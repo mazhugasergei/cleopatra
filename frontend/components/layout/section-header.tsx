@@ -32,7 +32,7 @@ export const SectionHeader = ({ backLink, title, className, ...props }: SectionH
 			<Link href={backLink} className={buttonVariants({ variant: "ghost", size: "icon" })}>
 				<ChevronLeftIcon />
 			</Link>
-			<H2 className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 font-bold">{title}</H2>
+			<H2 className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">{title}</H2>
 			<Menu align="right" openIcon={<EllipsisIcon />} closeIcon={<EllipsisIcon />} />
 		</header>
 	)
