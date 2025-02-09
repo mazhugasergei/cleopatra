@@ -87,14 +87,14 @@ export const Nav = (props: NavProps) => {
 	return (
 		<nav {...props}>
 			<ul className="flex items-center">
-				{routes.map((route) => (
-					<li key={route.href}>
+				{routes.map(({ href, label }, index) => (
+					<li key={href} className={cn(!index && "-ml-4")}>
 						<Link
-							href={route.href}
-							data-test={`${route.href.replace(/#/g, "")}-link`}
+							href={href}
+							data-test={`${href.replace(/#/g, "")}-link`}
 							className={buttonVariants({ variant: "link" })}
 						>
-							{route.label}
+							{label}
 						</Link>
 					</li>
 				))}
