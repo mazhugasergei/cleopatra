@@ -61,7 +61,7 @@ export interface HeroContentProps extends React.HTMLAttributes<HTMLDivElement> {
 }
 
 export const HeroContent = ({ className, ...props }: HeroContentProps) => (
-	<div className="absolute inset-0 bg-black/60 text-white">
+	<div className="absolute inset-0 bg-black/50 text-white">
 		<div className="wrapper flex h-full items-end justify-between pb-16">
 			<div className="space-y-1">
 				<h1

@@ -60,7 +60,7 @@ export const Services = ({ className, ...props }: ServicesProps) => {
 								<Image
 									src={image}
 									alt=""
-									width={1000}
+									width={lastAndOdd ? 2000 : 1000}
 									height={1000}
 									placeholder="blur"
 									className="absolute z-[-1] h-full w-full object-cover"
@@ -68,7 +68,7 @@ export const Services = ({ className, ...props }: ServicesProps) => {
 							)}
 							<div
 								className={cn(
-									"flex flex-col justify-end space-y-2 bg-black/60 p-4 sm:aspect-[16/9]",
+									"flex flex-col justify-end space-y-2 bg-black/50 p-4 sm:aspect-[16/9]",
 									lastAndOdd && "md:aspect-[32/9]"
 								)}
 							>
