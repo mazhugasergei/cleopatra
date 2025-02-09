@@ -13,11 +13,11 @@ export const About = (props: AboutProps) => {
 	return (
 		<section id="about" data-test="about" {...props}>
 			<SectionHeader backLink="#" title="About us" />
-			<div className="wrapper">
+			<div className="wrapper pb-12 md:pb-20">
 				<h2
 					className={cn(
 						headingFont.className,
-						"mt-6 text-center text-6xl font-bold sm:text-8xl md:mt-12 md:-mb-6 md:text-9xl lg:mt-16 lg:-mb-10 lg:text-[12rem]"
+						"mt-6 text-center text-5xl font-bold sm:text-8xl md:mt-12 md:-mb-6 md:text-9xl lg:mt-16 lg:-mb-10 lg:text-[12rem]"
 					)}
 				>
 					About us

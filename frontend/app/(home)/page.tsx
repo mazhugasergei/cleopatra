@@ -7,11 +7,9 @@ export default function Home() {
 	return (
 		<main>
 			<Hero />
-			<div className="space-y-20 pb-20 md:space-y-32">
-				<About />
-				<Services />
-				<Contact />
-			</div>
+			<About />
+			<Services />
+			<Contact />
 		</main>
 	)
 }
