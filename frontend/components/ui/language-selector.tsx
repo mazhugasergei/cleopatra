@@ -2,11 +2,11 @@ import { GlobeIcon } from "@/app/icons"
 import { Locale } from "@/lib/dictionaries"
 import { Menu, MenuProps } from "./menu"
 
-export interface LanguageSelectorProps extends MenuProps {
+export interface LanguageSelectorProps extends Omit<MenuProps, "routes"> {
 	locale: Locale
 }
 
-export const LanguageSelector = ({ locale, ...peops }: LanguageSelectorProps) => {
+export const LanguageSelector = ({ locale, ...props }: LanguageSelectorProps) => {
 	const SelectorIcon = () => (
 		<div className="flex items-center gap-2 px-2">
 			<GlobeIcon size={20} />
@@ -23,6 +23,7 @@ export const LanguageSelector = ({ locale, ...peops }: LanguageSelectorProps) =>
 			]}
 			openIcon={<SelectorIcon />}
 			closeIcon={<SelectorIcon />}
+			{...props}
 		/>
 	)
 }
