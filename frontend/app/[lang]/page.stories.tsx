@@ -15,6 +15,12 @@ type Story = StoryObj<typeof meta>
 
 export const Default: Story = {
 	args: {
-		children: <Page />,
+		children: <Page params={new Promise((res) => res({ lang: "en" }))} />,
+	},
+}
+
+export const Ru: Story = {
+	args: {
+		children: <Page params={new Promise((res) => res({ lang: "ru" }))} />,
 	},
 }

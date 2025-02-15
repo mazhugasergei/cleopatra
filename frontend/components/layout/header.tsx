@@ -3,18 +3,34 @@
 import { CloseIcon, MenuIcon, PhoneIcon } from "@/app/icons"
 import { cn } from "@/helpers/tailwind"
 import { useHeaderHeight } from "@/hooks/useHeaderHeight"
+import { DictionaryProps } from "@/lib/dictionaries"
 import Link from "next/link"
 import React from "react"
 import { Logo } from "../logo"
 import { Button, buttonVariants } from "../ui/button"
 
-export interface HeaderProps extends React.HTMLAttributes<HTMLDivElement> {
+export interface HeaderProps extends React.HTMLAttributes<HTMLDivElement>, DictionaryProps {
 	ref?: React.Ref<HTMLDivElement>
 }
 
-export const Header = ({ className, children, ref, ...props }: HeaderProps) => {
+export const Header = ({ dict, className, children, ref, ...props }: HeaderProps) => {
 	const headerHeight = useHeaderHeight()
 	const [isAtTop, setIsAtTop] = React.useState(true)
+
+	const routes = [
+		{
+			href: "#",
+			label: dict?.header?.home,
+		},
+		{
+			href: "#about",
+			label: dict?.header?.about,
+		},
+		{
+			href: "#services",
+			label: dict?.header?.services,
+		},
+	]
 
 	React.useEffect(() => {
 		document.documentElement.style.scrollPadding = `${headerHeight}px`
@@ -40,8 +56,8 @@ export const Header = ({ className, children, ref, ...props }: HeaderProps) => {
 			{...props}
 		>
 			<div className={cn("wrapper flex items-center justify-between border-b py-2", isAtTop && "border-transparent")}>
-				<Nav className="max-md:hidden" />
-				<Menu className="md:hidden" />
+				<Nav routes={routes} className="max-md:hidden" />
+				<Menu routes={routes} className="md:hidden" />
 				<Logo className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2" />
 				{/* desktop */}
 				<Link
@@ -49,7 +65,7 @@ export const Header = ({ className, children, ref, ...props }: HeaderProps) => {
 					data-test="contact-link"
 					className={buttonVariants({ size: "lg", className: "max-md:hidden" })}
 				>
-					Contact
+					{dict?.header?.contact}
 				</Link>
 				{/* mobile */}
 				<Link
@@ -64,26 +80,12 @@ export const Header = ({ className, children, ref, ...props }: HeaderProps) => {
 	)
 }
 
-export const routes = [
-	{
-		href: "#",
-		label: "Home",
-	},
-	{
-		href: "#about",
-		label: "About",
-	},
-	{
-		href: "#services",
-		label: "Services",
-	},
-]
-
 export interface NavProps extends React.HTMLAttributes<HTMLDivElement> {
 	ref?: React.Ref<HTMLDivElement>
+	routes: { href: string; label: string }[]
 }
 
-export const Nav = (props: NavProps) => {
+export const Nav = ({ routes, ...props }: NavProps) => {
 	return (
 		<nav {...props}>
 			<ul className="flex items-center">
@@ -104,16 +106,18 @@ export const Nav = (props: NavProps) => {
 }
 
 export interface MobileNavProps extends React.HTMLAttributes<HTMLDivElement> {
+	ref?: React.Ref<HTMLDivElement>
 	align?: "left" | "right"
 	openIcon?: React.ReactElement
 	closeIcon?: React.ReactElement
-	ref?: React.Ref<HTMLDivElement>
+	routes: { href: string; label: string }[]
 }
 
 export const Menu = ({
 	align = "left",
 	openIcon = <MenuIcon />,
 	closeIcon = <CloseIcon />,
+	routes,
 	className,
 	...props
 }: MobileNavProps) => {

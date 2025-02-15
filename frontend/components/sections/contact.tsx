@@ -2,16 +2,17 @@
 
 import { cn } from "@/helpers/tailwind"
 import { useHeaderHeight } from "@/hooks/useHeaderHeight"
+import { DictionaryProps } from "@/lib/dictionaries"
 import { Contacts } from "../contacts"
 import { SectionHeader } from "../layout/section-header"
 import { Map } from "../map"
 import { Socials } from "../socials"
 
-export interface ContactProps extends React.HTMLAttributes<HTMLDivElement> {
+export interface ContactProps extends React.HTMLAttributes<HTMLDivElement>, DictionaryProps {
 	ref?: React.Ref<HTMLDivElement>
 }
 
-export const Contact = ({ className, ...props }: ContactProps) => {
+export const Contact = ({ dict, className, ...props }: ContactProps) => {
 	const headerHeight = useHeaderHeight()
 
 	return (
@@ -27,7 +28,7 @@ export const Contact = ({ className, ...props }: ContactProps) => {
 			<SectionHeader backLink="#services" title="Contact" />
 			<div className="wrapper grid flex-1 grid-cols-1 gap-4 py-4 md:grid-cols-[7fr_10fr]">
 				<div className="flex flex-col justify-center">
-					<h2 className="text-4xl font-bold md:text-5xl">Contact us</h2>
+					<h2 className="text-4xl font-bold md:text-5xl">{dict?.contact?.heading}</h2>
 					<Contacts className="my-4 border-y py-4" />
 					<Socials />
 				</div>

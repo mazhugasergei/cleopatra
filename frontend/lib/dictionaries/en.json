@@ -1,0 +1,39 @@
+{
+	"header": {
+		"home": "Home",
+		"about": "About",
+		"services": "Services",
+		"contact": "Contact"
+	},
+	"hero": {
+		"heading": ["Fuel Your Drive.", "We Deliver."],
+		"subheading": "Cars & spare parts, delivered worldwide."
+	},
+	"about": {
+		"heading": "About us",
+		"description": [
+			"At Cleopatra Trading Co., we specialize in sourcing and delivering vehicles and spare parts worldwide. Based in Incheon, South Korea, we provide a seamless experience for customers looking for Korean, German, American, and other top-brand vehicles. Our team ensures secure container loading and efficient global shipping.",
+			"With multilingual support in Korean, English, Arabic, and Russian, we are committed to offering reliable and professional service to clients worldwide. Whether you need a fully assembled car or specific parts, we guarantee quality and satisfaction every step of the way."
+		]
+	},
+	"services": {
+		"heading": "Our services",
+		"items": [
+			{
+				"title": "Cars selection",
+				"description": "We offer a wide range of vehicles, including Korean, German, American, and other top-brand cars. Whether you're looking for a new, used, or salvaged vehicle, we source the best options to meet your needs and budget."
+			},
+			{
+				"title": "Spare parts selection",
+				"description": "We provide a wide range of high-quality spare parts for Korean, German, American, and other top-brand vehicles. Our team carefully selects and supplies reliable parts to meet your needs, ensuring quality, durability, and worldwide delivery."
+			},
+			{
+				"title": "Container loading & shipping",
+				"description": "We specialize in secure container loading and worldwide shipping. Our team ensures that vehicles and parts are packed efficiently, minimizing damage and maximizing space. We handle all logistics, ensuring smooth and timely delivery to your destination."
+			}
+		]
+	},
+	"contact": {
+		"heading": "Contact us"
+	}
+}
