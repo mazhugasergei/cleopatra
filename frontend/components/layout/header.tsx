@@ -1,36 +1,23 @@
 "use client"
 
-import { CloseIcon, MenuIcon, PhoneIcon } from "@/app/icons"
+import { PhoneIcon } from "@/app/icons"
 import { cn } from "@/helpers/tailwind"
 import { useHeaderHeight } from "@/hooks/useHeaderHeight"
 import { DictionaryProps } from "@/lib/dictionaries"
 import Link from "next/link"
 import React from "react"
 import { Logo } from "../logo"
-import { Button, buttonVariants } from "../ui/button"
+import { buttonVariants } from "../ui/button"
+import { Menu } from "../ui/menu"
 
 export interface HeaderProps extends React.HTMLAttributes<HTMLDivElement>, DictionaryProps {
 	ref?: React.Ref<HTMLDivElement>
+	routes: { href: string; label: string }[]
 }
 
-export const Header = ({ dict, className, children, ref, ...props }: HeaderProps) => {
+export const Header = ({ dict, routes, className, children, ref, ...props }: HeaderProps) => {
 	const headerHeight = useHeaderHeight()
 	const [isAtTop, setIsAtTop] = React.useState(true)
-
-	const routes = [
-		{
-			href: "#",
-			label: dict?.header?.home,
-		},
-		{
-			href: "#about",
-			label: dict?.header?.about,
-		},
-		{
-			href: "#services",
-			label: dict?.header?.services,
-		},
-	]
 
 	React.useEffect(() => {
 		document.documentElement.style.scrollPadding = `${headerHeight}px`
@@ -56,9 +43,26 @@ export const Header = ({ dict, className, children, ref, ...props }: HeaderProps
 			{...props}
 		>
 			<div className={cn("wrapper flex items-center justify-between border-b py-2", isAtTop && "border-transparent")}>
-				<Nav routes={routes} className="max-md:hidden" />
+				<nav className="max-md:hidden">
+					<ul className="flex items-center">
+						{routes.map(({ href, label }, index) => (
+							<li key={href} className={cn(!index && "-ml-4")}>
+								<Link
+									href={href}
+									data-test={`${href.replace(/#/g, "")}-link`}
+									className={buttonVariants({ variant: "link" })}
+								>
+									{label}
+								</Link>
+							</li>
+						))}
+					</ul>
+				</nav>
+
 				<Menu routes={routes} className="md:hidden" />
+
 				<Logo className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2" />
+
 				{/* desktop */}
 				<Link
 					href="#contact"
@@ -77,91 +81,5 @@ export const Header = ({ dict, className, children, ref, ...props }: HeaderProps
 				</Link>
 			</div>
 		</header>
-	)
-}
-
-export interface NavProps extends React.HTMLAttributes<HTMLDivElement> {
-	ref?: React.Ref<HTMLDivElement>
-	routes: { href: string; label: string }[]
-}
-
-export const Nav = ({ routes, ...props }: NavProps) => {
-	return (
-		<nav {...props}>
-			<ul className="flex items-center">
-				{routes.map(({ href, label }, index) => (
-					<li key={href} className={cn(!index && "-ml-4")}>
-						<Link
-							href={href}
-							data-test={`${href.replace(/#/g, "")}-link`}
-							className={buttonVariants({ variant: "link" })}
-						>
-							{label}
-						</Link>
-					</li>
-				))}
-			</ul>
-		</nav>
-	)
-}
-
-export interface MobileNavProps extends React.HTMLAttributes<HTMLDivElement> {
-	ref?: React.Ref<HTMLDivElement>
-	align?: "left" | "right"
-	openIcon?: React.ReactElement
-	closeIcon?: React.ReactElement
-	routes: { href: string; label: string }[]
-}
-
-export const Menu = ({
-	align = "left",
-	openIcon = <MenuIcon />,
-	closeIcon = <CloseIcon />,
-	routes,
-	className,
-	...props
-}: MobileNavProps) => {
-	const [open, setOpen] = React.useState(false)
-	const menuRef = React.useRef<HTMLDivElement>(null)
-
-	React.useEffect(() => {
-		const close = (e: MouseEvent) => {
-			if (!menuRef.current) return
-			if (menuRef.current.contains(e.target as Node)) return
-			setOpen(false)
-		}
-		document.addEventListener("click", close, true)
-		return () => document.removeEventListener("click", close, true)
-	}, [])
-
-	React.useEffect(() => {
-		const closeOnScroll = () => setOpen(false)
-		window.addEventListener("scroll", closeOnScroll)
-		return () => window.removeEventListener("scroll", closeOnScroll)
-	}, [])
-
-	return (
-		<div ref={menuRef} className={cn("relative", className)} {...props}>
-			<Button
-				variant="ghost"
-				size="icon"
-				onClick={() => setOpen((prev) => !prev)}
-				className={cn("cursor-pointer rounded-none", open && "bg-accent")}
-			>
-				{open ? closeIcon : openIcon}
-			</Button>
-
-			{open && (
-				<ul className={cn("bg-background absolute top-[110%] border p-2", align === "left" ? "left-0" : "right-0")}>
-					{routes.map((route) => (
-						<li key={route.href}>
-							<Link href={route.href} className={buttonVariants({ variant: "link" })}>
-								{route.label}
-							</Link>
-						</li>
-					))}
-				</ul>
-			)}
-		</div>
 	)
 }

@@ -8,12 +8,13 @@ import { SectionHeader } from "../layout/section-header"
 
 export interface AboutProps extends React.HTMLAttributes<HTMLDivElement>, DictionaryProps {
 	ref?: React.Ref<HTMLDivElement>
+	routes: { href: string; label: string }[]
 }
 
-export const About = ({ dict, ...props }: AboutProps) => {
+export const About = ({ dict, routes, ...props }: AboutProps) => {
 	return (
 		<section id="about" data-test="about" {...props}>
-			<SectionHeader backLink="#" title="About us" />
+			<SectionHeader backLink="#" title="About us" routes={routes} />
 			<div className="wrapper pb-12 md:pb-20">
 				<h2
 					className={cn(

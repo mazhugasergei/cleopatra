@@ -11,9 +11,10 @@ import { SectionHeader } from "../layout/section-header"
 
 export interface ServicesProps extends React.HTMLAttributes<HTMLDivElement>, DictionaryProps {
 	ref?: React.Ref<HTMLDivElement>
+	routes: { href: string; label: string }[]
 }
 
-export const Services = ({ dict, className, ...props }: ServicesProps) => {
+export const Services = ({ dict, routes, className, ...props }: ServicesProps) => {
 	const services: {
 		title: string
 		description: string
@@ -43,7 +44,7 @@ export const Services = ({ dict, className, ...props }: ServicesProps) => {
 			className={cn("bg-primary text-primary-foreground", className)}
 			{...props}
 		>
-			<SectionHeader backLink="#about" title="Our services" className="bg-inherit" />
+			<SectionHeader backLink="#about" title="Our services" className="bg-inherit" routes={routes} />
 			<h2
 				className={cn(
 					headingFont.className,

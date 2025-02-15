@@ -24,12 +24,27 @@ export default async function RootLayout({ children, params }: LayoutProps) {
 	const lang = (await params).lang
 	const dict = await getDictionary(lang)
 
+	const routes = [
+		{
+			href: "#",
+			label: dict?.header?.home,
+		},
+		{
+			href: "#about",
+			label: dict?.header?.about,
+		},
+		{
+			href: "#services",
+			label: dict?.header?.services,
+		},
+	]
+
 	return (
-		<html lang={(await params).lang}>
+		<html lang={lang}>
 			<body>
-				<Header dict={dict} />
+				<Header dict={dict} routes={routes} />
 				{children}
-				<Footer />
+				<Footer locale={lang} />
 			</body>
 		</html>
 	)

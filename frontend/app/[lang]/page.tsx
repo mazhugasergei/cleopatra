@@ -12,12 +12,27 @@ export default async function Home({ params }: HomeProps) {
 	const lang = (await params).lang
 	const dict = await getDictionary(lang)
 
+	const routes = [
+		{
+			href: "#",
+			label: dict?.header?.home,
+		},
+		{
+			href: "#about",
+			label: dict?.header?.about,
+		},
+		{
+			href: "#services",
+			label: dict?.header?.services,
+		},
+	]
+
 	return (
 		<main>
 			<Hero dict={dict} />
-			<About dict={dict} />
-			<Services dict={dict} />
-			<Contact dict={dict} />
+			<About dict={dict} routes={routes} />
+			<Services dict={dict} routes={routes} />
+			<Contact dict={dict} routes={routes} />
 		</main>
 	)
 }

@@ -5,17 +5,18 @@ import { cn } from "@/helpers/tailwind"
 import { useHeaderHeight } from "@/hooks/useHeaderHeight"
 import Link from "next/link"
 import React from "react"
-import { Menu } from "../layout/header"
 import { buttonVariants } from "../ui/button"
 import { H2 } from "../ui/headings"
+import { Menu } from "../ui/menu"
 
 export interface SectionHeaderProps extends React.HTMLAttributes<HTMLDivElement> {
+	ref?: React.Ref<HTMLDivElement>
 	backLink: string
 	title: string
-	ref?: React.Ref<HTMLDivElement>
+	routes: { href: string; label: string }[]
 }
 
-export const SectionHeader = ({ backLink, title, className, ...props }: SectionHeaderProps) => {
+export const SectionHeader = ({ backLink, title, routes, className, ...props }: SectionHeaderProps) => {
 	const height = useHeaderHeight()
 
 	return (
@@ -33,7 +34,7 @@ export const SectionHeader = ({ backLink, title, className, ...props }: SectionH
 				<ChevronLeftIcon />
 			</Link>
 			<H2 className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">{title}</H2>
-			<Menu align="right" openIcon={<EllipsisIcon />} closeIcon={<EllipsisIcon />} />
+			<Menu align="top-right" openIcon={<EllipsisIcon />} closeIcon={<EllipsisIcon />} routes={routes} />
 		</header>
 	)
 }
