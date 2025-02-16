@@ -16,4 +16,4 @@ const slice = createSlice({
 })
 
 export const { setDict } = slice.actions
-export const dict = slice.reducer
+export const dictReducer = slice.reducer

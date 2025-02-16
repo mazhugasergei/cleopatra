@@ -1,9 +1,7 @@
 import { match } from "@formatjs/intl-localematcher"
 import Negotiator from "negotiator"
 import { NextRequest, NextResponse } from "next/server"
-import { Locale } from "./lib/dictionaries"
-
-export const locales: Locale[] = ["en", "ru"]
+import { locales } from "./lib/dictionaries"
 
 function getLocale(request: NextRequest) {
 	const acceptLanguage = request.headers.get("accept-language") || ""

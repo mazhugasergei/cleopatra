@@ -1,7 +1,7 @@
+import { DictClientSetup } from "@/components/get-dict"
 import { Footer } from "@/components/layout/footer"
 import { Header } from "@/components/layout/header"
-import { getDictionary, Locale } from "@/lib/dictionaries"
-import { locales } from "@/middleware"
+import { getDictionary, Locale, locales } from "@/lib/dictionaries"
 import type { Metadata } from "next"
 import "../globals.css"
 
@@ -42,6 +42,7 @@ export default async function RootLayout({ children, params }: LayoutProps) {
 	return (
 		<html lang={lang}>
 			<body>
+				<DictClientSetup />
 				<Header dict={dict} routes={routes} />
 				{children}
 				<Footer locale={lang} />

@@ -1,4 +1,6 @@
-import "server-only"
+// import "server-only"
+import en from "./en.json"
+import ru from "./ru.json"
 
 export interface DictionaryProps {
 	dict: {
@@ -8,9 +10,6 @@ export interface DictionaryProps {
 
 export type Locale = "en" | "ru"
 
-const dictionaries = {
-	en: () => import("./en.json").then((module) => module.default),
-	ru: () => import("./ru.json").then((module) => module.default),
-}
-
-export const getDictionary = async (locale: "en" | "ru"): Promise<{ [key: string]: any }> => dictionaries[locale]()
+export const locales: Locale[] = ["en", "ru"]
+const dictionaries = { en, ru }
+export const getDictionary = async (locale: Locale): Promise<{ [key: string]: any }> => dictionaries[locale]
