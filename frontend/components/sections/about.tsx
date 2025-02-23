@@ -2,6 +2,7 @@ import { headingFont } from "@/fonts"
 import { DictionaryProps } from "@/lib/dictionaries"
 import about from "@/public/about.jpg"
 import { cn } from "@/utils/cn"
+import { preventWidowWord } from "@/utils/text"
 import Image from "next/image"
 import React from "react"
 import { SectionHeader } from "../layout/section-header"
@@ -26,7 +27,7 @@ export const About = ({ dict, routes, ...props }: AboutProps) => {
 				</h2>
 				<div className="grid grid-cols-1 gap-4 md:grid-cols-[10fr_8fr] md:gap-8">
 					<div className="space-y-4 self-center py-4 md:py-12">
-						{dict?.about?.description?.map((p: string, i: number) => <p key={i}>{p}</p>)}
+						{dict?.about?.description?.map((p: string, i: number) => <p key={i}>{preventWidowWord(p)}</p>)}
 					</div>
 
 					<Image
