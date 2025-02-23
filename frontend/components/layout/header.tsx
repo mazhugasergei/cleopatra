@@ -1,9 +1,9 @@
 "use client"
 
 import { PhoneIcon } from "@/app/icons"
-import { cn } from "@/helpers/tailwind"
 import { useHeaderHeight } from "@/hooks/useHeaderHeight"
 import { DictionaryProps } from "@/lib/dictionaries"
+import { cn } from "@/utils/cn"
 import Link from "next/link"
 import React from "react"
 import { Logo } from "../logo"

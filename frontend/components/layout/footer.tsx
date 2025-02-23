@@ -1,5 +1,5 @@
-import { cn } from "@/helpers/tailwind"
 import { Locale } from "@/lib/dictionaries"
+import { cn } from "@/utils/cn"
 import { Logo } from "../logo"
 import { LanguageSelector } from "../ui/language-selector"
 

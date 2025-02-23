@@ -1,4 +1,4 @@
-import { cn } from "@/helpers/tailwind"
+import { cn } from "@/utils/cn"
 import Link from "next/link"
 import { Address, AddressProps } from "./address"
 import { Banks } from "./banks"

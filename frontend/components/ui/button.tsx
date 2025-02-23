@@ -1,4 +1,4 @@
-import { cn } from "@/helpers/tailwind"
+import { cn } from "@/utils/cn"
 import { cva, type VariantProps } from "class-variance-authority"
 import React from "react"
 

@@ -1,4 +1,4 @@
-import { cn } from "@/helpers/tailwind"
+import { cn } from "@/utils/cn"
 
 export interface MapProps extends React.HTMLAttributes<HTMLIFrameElement> {
 	ref?: React.Ref<HTMLIFrameElement>

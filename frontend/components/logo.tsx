@@ -1,5 +1,5 @@
 import { headingFont } from "@/fonts"
-import { cn } from "@/helpers/tailwind"
+import { cn } from "@/utils/cn"
 import Link from "next/link"
 
 export interface LogoProps extends React.HTMLAttributes<HTMLAnchorElement> {

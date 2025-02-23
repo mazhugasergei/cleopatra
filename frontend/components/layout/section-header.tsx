@@ -1,8 +1,8 @@
 "use client"
 
 import { ChevronLeftIcon, EllipsisIcon } from "@/app/icons"
-import { cn } from "@/helpers/tailwind"
 import { useHeaderHeight } from "@/hooks/useHeaderHeight"
+import { cn } from "@/utils/cn"
 import Link from "next/link"
 import React from "react"
 import { buttonVariants } from "../ui/button"

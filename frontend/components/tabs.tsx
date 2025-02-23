@@ -1,6 +1,6 @@
 "use client"
 
-import { cn } from "@/helpers/tailwind"
+import { cn } from "@/utils/cn"
 import React from "react"
 import { buttonVariants } from "./ui/button"
 

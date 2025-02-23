@@ -1,8 +1,8 @@
 "use client"
 
-import { cn } from "@/helpers/tailwind"
 import { useHeaderHeight } from "@/hooks/useHeaderHeight"
 import { DictionaryProps } from "@/lib/dictionaries"
+import { cn } from "@/utils/cn"
 import { Contacts } from "../contacts"
 import { SectionHeader } from "../layout/section-header"
 import { Map } from "../map"

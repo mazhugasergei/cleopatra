@@ -2,9 +2,9 @@
 
 import { ChevronDownIcon } from "@/app/icons"
 import { headingFont } from "@/fonts"
-import { cn } from "@/helpers/tailwind"
 import { DictionaryProps } from "@/lib/dictionaries"
 import hero from "@/public/hero.jpg"
+import { cn } from "@/utils/cn"
 import Image from "next/image"
 import Link from "next/link"
 import React from "react"

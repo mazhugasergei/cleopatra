@@ -1,4 +1,4 @@
-import { cn } from "@/helpers/tailwind"
+import { cn } from "@/utils/cn"
 import Image, { StaticImageData } from "next/image"
 
 export interface TabsContentProps extends React.HTMLAttributes<HTMLDivElement> {

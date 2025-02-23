@@ -1,7 +1,7 @@
 "use client"
 
 import { CloseIcon, MenuIcon } from "@/app/icons"
-import { cn } from "@/helpers/tailwind"
+import { cn } from "@/utils/cn"
 import Link from "next/link"
 import React from "react"
 import { Button, buttonVariants } from "./button"

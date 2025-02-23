@@ -1,7 +1,7 @@
 import { headingFont } from "@/fonts"
-import { cn } from "@/helpers/tailwind"
 import { DictionaryProps } from "@/lib/dictionaries"
 import about from "@/public/about.jpg"
+import { cn } from "@/utils/cn"
 import Image from "next/image"
 import React from "react"
 import { SectionHeader } from "../layout/section-header"

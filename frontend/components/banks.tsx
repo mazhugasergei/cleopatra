@@ -1,4 +1,4 @@
-import { cn } from "@/helpers/tailwind"
+import { cn } from "@/utils/cn"
 
 export interface BanksProps extends React.HTMLAttributes<HTMLDivElement> {
 	ref?: React.Ref<HTMLDivElement>

@@ -1,4 +1,4 @@
-import { cn } from "@/helpers/tailwind"
+import { cn } from "@/utils/cn"
 import Link from "next/link"
 import { buttonVariants } from "./ui/button"
 

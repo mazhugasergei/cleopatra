@@ -1,5 +1,5 @@
 import { headingFont } from "@/fonts"
-import { cn } from "@/helpers/tailwind"
+import { cn } from "@/utils/cn"
 
 export interface HeadingProps extends React.HTMLAttributes<HTMLHeadingElement> {
 	ref?: React.Ref<HTMLHeadingElement>
