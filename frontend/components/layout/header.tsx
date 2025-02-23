@@ -1,7 +1,6 @@
 "use client"
 
 import { PhoneIcon } from "@/app/icons"
-import { useHeaderHeight } from "@/hooks/useHeaderHeight"
 import { DictionaryProps } from "@/lib/dictionaries"
 import { cn } from "@/utils/cn"
 import Link from "next/link"
@@ -16,12 +15,7 @@ export interface HeaderProps extends React.HTMLAttributes<HTMLDivElement>, Dicti
 }
 
 export const Header = ({ dict, routes, className, children, ref, ...props }: HeaderProps) => {
-	const headerHeight = useHeaderHeight()
 	const [isAtTop, setIsAtTop] = React.useState(true)
-
-	React.useEffect(() => {
-		document.documentElement.style.scrollPadding = `${headerHeight}px`
-	}, [headerHeight])
 
 	React.useEffect(() => {
 		const handleScroll = () => setIsAtTop(window.scrollY === 0)

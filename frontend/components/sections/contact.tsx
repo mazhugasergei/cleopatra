@@ -20,7 +20,7 @@ export const Contact = ({ dict, routes, className, ...props }: ContactProps) => 
 		<section
 			id="contact"
 			data-test="contact"
-			className={cn("isolate flex flex-col", className)}
+			className={cn("flex flex-col", className)}
 			style={{
 				minHeight: `calc(100vh - ${headerHeight}px)`,
 			}}
@@ -33,7 +33,7 @@ export const Contact = ({ dict, routes, className, ...props }: ContactProps) => 
 					<Contacts className="my-4 border-y py-4" />
 					<Socials />
 				</div>
-				<Map className="z-[-1]" />
+				<Map />
 			</div>
 		</section>
 	)

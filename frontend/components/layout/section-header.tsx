@@ -22,12 +22,10 @@ export const SectionHeader = ({ backLink, title, routes, className, ...props }: 
 	return (
 		<header
 			className={cn(
-				"wrapper bg-background sticky top-0 z-40 flex items-center justify-between border-b py-2",
+				"wrapper bg-background sticky top-0 z-50 flex items-center justify-between border-y py-2",
 				className
 			)}
-			style={{
-				top: height,
-			}}
+			style={{ height }}
 			{...props}
 		>
 			<Link href={backLink} className={buttonVariants({ variant: "ghost", size: "icon" })}>
