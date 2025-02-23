@@ -20,10 +20,6 @@ export const GetDict = () => {
 	const dict = useSelector((state: RootState) => state.dict)
 
 	React.useEffect(() => {
-		process.env.NODE_ENV === "development" && console.log(dict)
-	}, [dict])
-
-	React.useEffect(() => {
 		const lang = (Array.isArray(params.lang) ? params.lang[0] || "en" : params.lang || "en") as Locale
 		setLang(lang)
 	}, [params.lang])
