@@ -29,7 +29,7 @@ export const Header = ({ dict, routes, className, children, ref, ...props }: Hea
 			ref={ref}
 			data-test="header"
 			className={cn(
-				"fixed top-0 right-0 left-0 z-50",
+				"sticky top-0 right-0 left-0 z-50",
 				isAtTop ? "bg-transparent" : "bg-background",
 				isAtTop && "invert",
 				className

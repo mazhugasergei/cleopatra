@@ -29,7 +29,7 @@ export default async function Home({ params }: HomeProps) {
 
 	return (
 		<main>
-			<Hero dict={dict} />
+			<Hero dict={dict} routes={routes} />
 			<About dict={dict} routes={routes} />
 			<Services dict={dict} routes={routes} />
 			<Contact dict={dict} routes={routes} />

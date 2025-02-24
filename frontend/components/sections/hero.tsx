@@ -8,35 +8,41 @@ import { cn } from "@/utils/cn"
 import Image from "next/image"
 import Link from "next/link"
 import React from "react"
+import { Header } from "../layout/header"
 import { buttonVariants } from "../ui/button"
 
 export interface HeroProps extends React.HTMLAttributes<HTMLDivElement>, DictionaryProps {
 	ref?: React.Ref<HTMLDivElement>
+	routes: { href: string; label: string }[]
 }
 
-export const Hero = ({ dict, className, ...props }: HeroProps) => {
+export const Hero = ({ dict, routes, className, ...props }: HeroProps) => {
 	return (
-		<section data-test="hero" className={cn("bg-primary relative h-screen", className)} {...props}>
+		<section
+			data-test="hero"
+			className={cn("bg-primary relative isolate flex h-screen flex-col justify-between", className)}
+			{...props}
+		>
 			<BG />
 
-			<div className="absolute inset-0 bg-black/50 text-white">
-				<div className="wrapper flex h-full items-end justify-between pb-16">
-					<div className="space-y-1">
-						<h1
-							className={cn(
-								headingFont.className,
-								"flex flex-col text-[2.2rem] leading-[1.1] font-bold sm:text-[3rem] md:text-[4rem] lg:text-[5rem]"
-							)}
-						>
-							{dict?.hero?.heading?.map((line: string, index: number) => <span key={index}>{line}</span>)}
-						</h1>
-						<p className="text-secondary text-sm italic sm:text-base lg:text-lg">{dict?.hero?.subheading}</p>
-					</div>
+			<Header dict={dict} routes={routes} />
 
-					<Link href="#about" className={buttonVariants({ variant: "ghost", size: "icon" })}>
-						<ChevronDownIcon />
-					</Link>
+			<div className="wrapper flex items-end justify-between pb-16 text-white">
+				<div className="space-y-1">
+					<h1
+						className={cn(
+							headingFont.className,
+							"flex flex-col text-[2.2rem] leading-[1.1] font-bold sm:text-[3rem] md:text-[4rem] lg:text-[5rem]"
+						)}
+					>
+						{dict?.hero?.heading?.map((line: string, index: number) => <span key={index}>{line}</span>)}
+					</h1>
+					<p className="text-secondary text-sm italic sm:text-base lg:text-lg">{dict?.hero?.subheading}</p>
 				</div>
+
+				<Link href="#about" className={buttonVariants({ variant: "ghost", size: "icon" })}>
+					<ChevronDownIcon />
+				</Link>
 			</div>
 		</section>
 	)
@@ -60,7 +66,7 @@ export const BG = ({ className, ...props }: BGProps) => {
 	}, [speed])
 
 	return (
-		<div className={cn("relative h-full overflow-hidden", className)} {...props}>
+		<div className={cn("absolute inset-0 z-[-1] overflow-hidden", className)} {...props}>
 			<Image
 				src={hero}
 				alt=""
@@ -72,6 +78,7 @@ export const BG = ({ className, ...props }: BGProps) => {
 					top: offset,
 				}}
 			/>
+			<div className="absolute inset-0 bg-black/50" />
 		</div>
 	)
 }
