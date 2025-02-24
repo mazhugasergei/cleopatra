@@ -1,7 +1,7 @@
 import { Locale } from "@/lib/dictionaries"
 import { cn } from "@/utils/cn"
 import { Logo } from "../logo"
-import { LanguageSelector } from "../ui/language-selector"
+import { LanguageSelect } from "../ui/language-select"
 
 export interface FooterProps extends React.HTMLAttributes<HTMLDivElement> {
 	ref?: React.Ref<HTMLDivElement>
@@ -9,10 +9,12 @@ export interface FooterProps extends React.HTMLAttributes<HTMLDivElement> {
 }
 
 export const Footer = ({ locale, className, ...props }: FooterProps) => (
-	<footer className={cn("bg-primary", className)} {...props}>
-		<div className="wrapper text-primary-foreground flex items-center justify-between gap-4 py-8">
+	<footer className={cn("border-t", className)} {...props}>
+		<div className="wrapper flex items-center justify-between gap-4 py-8">
 			<Logo full className="max-sm:text-base" />
-			<LanguageSelector locale={locale} />
+			<div>
+				<LanguageSelect locale={locale} />
+			</div>
 		</div>
 	</footer>
 )
