@@ -15,7 +15,7 @@ export interface AboutProps extends React.HTMLAttributes<HTMLDivElement>, Dictio
 export const About = ({ dict, routes, ...props }: AboutProps) => {
 	return (
 		<section id="about" data-test="about" {...props}>
-			<SectionHeader backLink="#" title="About us" routes={routes} />
+			<SectionHeader backLink="#hero" title="About us" routes={routes} />
 			<div className="wrapper pb-12 md:pb-20">
 				<h2
 					className={cn(

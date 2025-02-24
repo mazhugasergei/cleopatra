@@ -20,6 +20,7 @@ export const Hero = ({ dict, routes, className, ...props }: HeroProps) => {
 	return (
 		<section
 			data-test="hero"
+			id="hero"
 			className={cn("bg-primary relative isolate flex h-screen flex-col justify-between", className)}
 			{...props}
 		>
