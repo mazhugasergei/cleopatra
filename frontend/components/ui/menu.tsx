@@ -43,19 +43,14 @@ export const Menu = ({
 
 	return (
 		<div ref={menuRef} className={cn("relative", className)} {...props}>
-			<Button
-				variant="ghost"
-				size="icon"
-				onClick={() => setOpen((prev) => !prev)}
-				className={cn("cursor-pointer rounded-none", open && "bg-accent")}
-			>
+			<Button variant="ghost" onClick={() => setOpen((prev) => !prev)}>
 				{open ? closeIcon : openIcon}
 			</Button>
 
 			{open && (
 				<ul
 					className={cn(
-						"bg-background absolute border p-2",
+						"bg-background absolute rounded-sm border p-2",
 						align === "top-left"
 							? "top-[110%] left-0"
 							: align === "top-right"

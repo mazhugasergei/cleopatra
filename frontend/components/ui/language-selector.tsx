@@ -8,7 +8,7 @@ export interface LanguageSelectorProps extends Omit<MenuProps, "routes"> {
 
 export const LanguageSelector = ({ locale, ...props }: LanguageSelectorProps) => {
 	const SelectorIcon = () => (
-		<div className="flex items-center gap-2 px-2">
+		<div className="flex items-center gap-2">
 			<GlobeIcon size={20} />
 			{locale.toUpperCase()}
 		</div>
