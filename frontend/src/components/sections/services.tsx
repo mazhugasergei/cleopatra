@@ -36,7 +36,7 @@ export const Services = ({ dict, routes, className, ...props }: ServicesProps) =
 			<h2
 				className={cn(
 					headingFont.className,
-					"my-6 text-center text-4xl font-bold sm:text-6xl md:my-12 md:text-7xl lg:my-16 lg:text-9xl"
+					"my-10 text-center text-4xl font-bold sm:text-6xl md:my-16 md:text-7xl lg:my-18 lg:text-9xl"
 				)}
 			>
 				{dict?.services?.heading}
