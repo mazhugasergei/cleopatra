@@ -39,17 +39,20 @@ export const Header = ({ dict, routes, className, children, ...props }: HeaderPr
 			<div className={cn("wrapper flex items-center justify-between border-b py-2", isAtTop && "border-transparent")}>
 				<nav className="max-md:hidden">
 					<ul className="flex items-center">
-						{routes.map(({ href, label }, index) => (
-							<li key={href} className={cn(!index && "-ml-4")}>
-								<Link
-									href={href}
-									data-test={`${href.replace(/#/g, "")}-link`}
-									className={buttonVariants({ variant: "link" })}
-								>
-									{label}
-								</Link>
-							</li>
-						))}
+						{routes.map(
+							({ href, label }, index) =>
+								href !== "/#contact" && (
+									<li key={href} className={cn(!index && "-ml-4")}>
+										<Link
+											href={href}
+											data-test={`${href.replace(/#/g, "")}-link`}
+											className={buttonVariants({ variant: "link" })}
+										>
+											{label}
+										</Link>
+									</li>
+								)
+						)}
 					</ul>
 				</nav>
 
