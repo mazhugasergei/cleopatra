@@ -39,7 +39,7 @@ export const About = ({ dict, routes, ...props }: AboutProps) => {
 						width={1000}
 						height={1000}
 						placeholder="blur"
-						className="inset-0 h-full object-cover object-[50%_20%] max-md:aspect-[16/9] md:aspect-[4/3]"
+						className="inset-0 h-full rounded-md object-cover object-[50%_20%] max-md:aspect-[16/9] md:aspect-[4/3]"
 					/>
 				</div>
 			</div>
