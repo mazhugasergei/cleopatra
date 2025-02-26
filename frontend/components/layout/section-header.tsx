@@ -1,13 +1,13 @@
 "use client"
 
-import { ChevronLeftIcon, EllipsisIcon } from "@/app/icons"
+import { ChevronLeftIcon } from "@/app/icons"
 import { useHeaderHeight } from "@/hooks/useHeaderHeight"
 import { cn } from "@/utils/cn"
 import Link from "next/link"
 import React from "react"
 import { buttonVariants } from "../ui/button"
 import { H2 } from "../ui/headings"
-import { Menu } from "../ui/menu"
+import { NavMenu } from "../ui/nav-menu"
 
 export interface SectionHeaderProps extends React.HTMLAttributes<HTMLDivElement> {
 	ref?: React.Ref<HTMLDivElement>
@@ -32,7 +32,8 @@ export const SectionHeader = ({ backLink, title, routes, className, ...props }: 
 				<ChevronLeftIcon />
 			</Link>
 			<H2 className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">{title}</H2>
-			<Menu align="top-right" openIcon={<EllipsisIcon />} closeIcon={<EllipsisIcon />} routes={routes} />
+
+			<NavMenu routes={routes} />
 		</header>
 	)
 }

@@ -7,7 +7,7 @@ import Link from "next/link"
 import React from "react"
 import { Logo } from "../logo"
 import { buttonVariants } from "../ui/button"
-import { Menu } from "../ui/menu"
+import { NavMenu } from "../ui/nav-menu"
 
 export interface HeaderProps extends React.HTMLAttributes<HTMLDivElement>, DictionaryProps {
 	ref?: React.Ref<HTMLDivElement>
@@ -53,7 +53,9 @@ export const Header = ({ dict, routes, className, children, ref, ...props }: Hea
 					</ul>
 				</nav>
 
-				<Menu routes={routes} className="md:hidden" />
+				<div className="md:hidden">
+					<NavMenu routes={routes} />
+				</div>
 
 				<Logo className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2" />
 
@@ -65,6 +67,7 @@ export const Header = ({ dict, routes, className, children, ref, ...props }: Hea
 				>
 					{dict?.header?.contact}
 				</Link>
+
 				{/* mobile */}
 				<Link
 					href="#contact"

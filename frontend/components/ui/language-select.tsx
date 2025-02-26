@@ -1,33 +1,45 @@
 "use client"
 
 import { GlobeIcon } from "@/app/icons"
-import { Select, SelectContent, SelectItem, SelectTrigger } from "@/components/ui/select"
+import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu"
 import { Locale } from "@/lib/dictionaries"
+import Link from "next/link"
+import { usePathname } from "next/navigation"
 import React from "react"
+import { Button } from "./button"
 
-export interface LanguageSelectProps extends React.ComponentProps<typeof Select> {
+export interface LanguageSelectProps extends React.ComponentProps<typeof DropdownMenu> {
 	locale: Locale
 }
 
 export const LanguageSelect = ({ locale, ...props }: LanguageSelectProps) => {
+	const pathname = usePathname()
+	const pathnameWithoutLocale = pathname.replace(`/${locale}`, "/")
+
 	const routes = [
-		{ href: "/en", label: "EN" },
-		{ href: "/ru", label: "RU" },
+		{ code: "en", label: "English" },
+		{ code: "ru", label: "Русский" },
 	]
 
+	const localeName = routes.find((route) => route.code === locale)?.label
+
 	return (
-		<Select onValueChange={(value) => (window.location.href = value)} {...props}>
-			<SelectTrigger className="gap-1">
-				<GlobeIcon size={20} />
-				{locale.toUpperCase()}
-			</SelectTrigger>
-			<SelectContent>
+		<DropdownMenu>
+			<DropdownMenuTrigger asChild>
+				<Button variant="outline">
+					<GlobeIcon />
+					{localeName}
+				</Button>
+			</DropdownMenuTrigger>
+			<DropdownMenuContent className="mx-4 flex flex-col">
 				{routes.map((route) => (
-					<SelectItem key={route.href} value={route.href}>
-						{route.label}
-					</SelectItem>
+					<DropdownMenuItem key={route.code} asChild>
+						<Link href={"/" + route.code + pathnameWithoutLocale} className="px-4 py-2 font-medium">
+							{route.label}
+						</Link>
+					</DropdownMenuItem>
 				))}
-			</SelectContent>
-		</Select>
+			</DropdownMenuContent>
+		</DropdownMenu>
 	)
 }

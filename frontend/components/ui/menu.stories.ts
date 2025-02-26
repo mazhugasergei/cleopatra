@@ -1,19 +1,13 @@
-import { Menu } from "@/components/ui/menu"
+import { NavMenu } from "@/components/ui/nav-menu"
 import type { Meta, StoryObj } from "@storybook/react"
 
-const meta: Meta<typeof Menu> = {
-	title: "Cleopatra/Layout/Menu",
-	component: Menu,
+const meta: Meta<typeof NavMenu> = {
+	title: "Cleopatra/Layout/NavMenu",
+	component: NavMenu,
 	parameters: {
 		layout: "centered",
 	},
 	tags: ["autodocs"],
-	argTypes: {
-		ref: {
-			table: { disable: true },
-			control: false,
-		},
-	},
 }
 
 export default meta
