@@ -14,7 +14,7 @@ export default async function Home({ params }: HomeProps) {
 
 	const routes = [
 		{
-			href: "#",
+			href: "#hero",
 			label: dict?.header?.home,
 		},
 		{
