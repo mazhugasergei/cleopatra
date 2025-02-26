@@ -100,7 +100,7 @@ const Phone = () => {
 	]
 
 	return (
-		<div className="flex flex-col gap-1">
+		<div className="flex flex-col items-start gap-1">
 			{phones.map(({ languages, number }, index) => (
 				<Link key={index} href={`tel:${number}`} rel="noopener noreferrer" className="font-medium underline">
 					{number} ({languages.join(", ")})
@@ -135,7 +135,7 @@ const Chat = () => {
 	]
 
 	return (
-		<div className="flex flex-col gap-1">
+		<div className="flex flex-col items-start gap-1">
 			{items.map(({ label, Icon, href }, index) => (
 				<Link
 					key={index}
