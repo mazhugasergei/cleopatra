@@ -1,12 +1,13 @@
 "use client"
 
-import { useHeaderHeight } from "@/hooks/useHeaderHeight"
+import { headingFont } from "@/fonts"
+import map from "@/images/map.jpg"
 import { DictionaryProps } from "@/lib/dictionaries"
 import { cn } from "@/utils/cn"
+import Image from "next/image"
 import { Contacts } from "../contacts"
 import { SectionHeader } from "../layout/section-header"
-import { Map } from "../map"
-import { Socials } from "../socials"
+import { Logo } from "../logo"
 
 export interface ContactProps extends React.HTMLAttributes<HTMLDivElement>, DictionaryProps {
 	ref?: React.Ref<HTMLDivElement>
@@ -14,18 +15,18 @@ export interface ContactProps extends React.HTMLAttributes<HTMLDivElement>, Dict
 }
 
 export const Contact = ({ dict, routes, className, ...props }: ContactProps) => {
-	const headerHeight = useHeaderHeight()
-
 	return (
-		<section id="contact" data-test="contact" className={cn("flex h-screen flex-col", className)} {...props}>
+		<section id="contact" data-test="contact" className={cn("flex flex-col", className)} {...props}>
 			<SectionHeader backLink="#services" title="Contact" routes={routes} />
-			<div className="wrapper grid flex-1 grid-cols-1 gap-4 py-4 md:grid-cols-[7fr_10fr]">
-				<div className="flex flex-col justify-center">
-					<h2 className="text-4xl font-bold md:text-5xl">{dict?.contact?.heading}</h2>
-					<Contacts className="my-4 border-y py-4" />
-					<Socials />
-				</div>
-				<Map />
+
+			<div className={cn(headingFont.className, "my-10 space-y-2 text-center md:my-16 lg:my-18")}>
+				<h2 className="text-center text-4xl font-bold sm:text-6xl md:text-7xl lg:text-8xl">{dict?.contact?.heading}</h2>
+				<Logo full />
+			</div>
+
+			<div className="wrapper grid flex-1 grid-cols-1 gap-8 pb-8 md:grid-cols-[7fr_10fr]">
+				<Image src={map} alt="" className="rounded-md md:order-1" />
+				<Contacts />
 			</div>
 		</section>
 	)
