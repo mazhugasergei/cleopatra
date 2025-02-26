@@ -42,7 +42,7 @@ export const Services = ({ dict, routes, className, ...props }: ServicesProps) =
 				<Logo full />
 			</div>
 
-			<div className="wrapper !max-w-3xl space-y-8 pb-8 md:pb-12">
+			<div className="wrapper !max-w-4xl space-y-8 pb-8 md:pb-12">
 				{services.map(({ title, description, Icon }, index) => (
 					<div key={`service-${index}`} className="grid grid-cols-[auto_1fr] gap-4">
 						<Icon size={40} />
