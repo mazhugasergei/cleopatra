@@ -36,6 +36,10 @@ export default async function RootLayout({ children, params }: LayoutProps) {
 			href: "#services",
 			label: dict?.header?.services,
 		},
+		{
+			href: "#contact",
+			label: dict?.header?.contact,
+		},
 	]
 
 	return (

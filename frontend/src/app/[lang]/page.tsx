@@ -25,6 +25,10 @@ export default async function Home({ params }: HomeProps) {
 			href: "#services",
 			label: dict?.header?.services,
 		},
+		{
+			href: "#contact",
+			label: dict?.header?.contact,
+		},
 	]
 
 	return (
