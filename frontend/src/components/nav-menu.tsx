@@ -4,7 +4,7 @@ import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigge
 import { MenuIcon, XIcon } from "lucide-react"
 import Link from "next/link"
 import React from "react"
-import { Button } from "./button"
+import { Button } from "./ui/button"
 
 export interface MenuProps extends React.ComponentProps<typeof DropdownMenu> {
 	routes: { href: string; label: string }[]

@@ -1,3 +1,5 @@
+import { SectionHeader } from "@/components/layout/section-header"
+import { Logo } from "@/components/logo"
 import { headingFont } from "@/fonts"
 import about from "@/images/about.jpg"
 import { DictionaryProps } from "@/lib/dictionaries"
@@ -5,11 +7,8 @@ import { cn } from "@/utils/cn"
 import { preventWidowWord } from "@/utils/text"
 import Image from "next/image"
 import React from "react"
-import { SectionHeader } from "../layout/section-header"
-import { Logo } from "../logo"
 
 export interface AboutProps extends React.HTMLAttributes<HTMLDivElement>, DictionaryProps {
-	ref?: React.Ref<HTMLDivElement>
 	routes: { href: string; label: string }[]
 }
 

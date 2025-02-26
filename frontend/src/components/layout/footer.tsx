@@ -1,10 +1,9 @@
+import { LanguageSelect } from "@/components/language-select"
 import { Locale } from "@/lib/dictionaries"
 import { cn } from "@/utils/cn"
 import { Logo } from "../logo"
-import { LanguageSelect } from "../ui/language-select"
 
 export interface FooterProps extends React.HTMLAttributes<HTMLDivElement> {
-	ref?: React.Ref<HTMLDivElement>
 	locale: Locale
 }
 

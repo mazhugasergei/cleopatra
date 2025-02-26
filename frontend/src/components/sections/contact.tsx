@@ -23,7 +23,6 @@ import { Logo } from "../logo"
 import { buttonVariants } from "../ui/button"
 
 export interface ContactProps extends React.HTMLAttributes<HTMLDivElement>, DictionaryProps {
-	ref?: React.Ref<HTMLDivElement>
 	routes: { href: string; label: string }[]
 }
 

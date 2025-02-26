@@ -1,16 +1,15 @@
 "use client"
 
+import { NavMenu } from "@/components/nav-menu"
+import { buttonVariants } from "@/components/ui/button"
+import { headingFont } from "@/fonts"
 import { useHeaderHeight } from "@/hooks/useHeaderHeight"
 import { cn } from "@/utils/cn"
 import { ChevronLeftIcon } from "lucide-react"
 import Link from "next/link"
 import React from "react"
-import { buttonVariants } from "../ui/button"
-import { H2 } from "../ui/headings"
-import { NavMenu } from "../ui/nav-menu"
 
 export interface SectionHeaderProps extends React.HTMLAttributes<HTMLDivElement> {
-	ref?: React.Ref<HTMLDivElement>
 	backLink: string
 	title: string
 	routes: { href: string; label: string }[]
@@ -31,7 +30,14 @@ export const SectionHeader = ({ backLink, title, routes, className, ...props }: 
 			<Link href={backLink} className={buttonVariants({ variant: "ghost", size: "icon" })}>
 				<ChevronLeftIcon />
 			</Link>
-			<H2 className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">{title}</H2>
+			<h2
+				className={cn(
+					headingFont.className,
+					"absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-xl font-bold"
+				)}
+			>
+				{title}
+			</h2>
 
 			<NavMenu routes={routes} />
 		</header>

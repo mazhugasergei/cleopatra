@@ -6,7 +6,7 @@ import { GlobeIcon } from "lucide-react"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
 import React from "react"
-import { Button } from "./button"
+import { Button } from "./ui/button"
 
 export interface LanguageSelectProps extends React.ComponentProps<typeof DropdownMenu> {
 	locale: Locale
@@ -24,7 +24,7 @@ export const LanguageSelect = ({ locale, ...props }: LanguageSelectProps) => {
 	const localeName = routes.find((route) => route.code === locale)?.label
 
 	return (
-		<DropdownMenu>
+		<DropdownMenu {...props}>
 			<DropdownMenuTrigger asChild>
 				<Button variant="outline">
 					<GlobeIcon />

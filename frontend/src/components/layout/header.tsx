@@ -1,20 +1,20 @@
 "use client"
 
+import { Logo } from "@/components/logo"
+import { NavMenu } from "@/components/nav-menu"
+import { buttonVariants } from "@/components/ui/button"
 import { DictionaryProps } from "@/lib/dictionaries"
 import { cn } from "@/utils/cn"
 import { PhoneIcon } from "lucide-react"
 import Link from "next/link"
 import React from "react"
-import { Logo } from "../logo"
-import { buttonVariants } from "../ui/button"
-import { NavMenu } from "../ui/nav-menu"
 
 export interface HeaderProps extends React.HTMLAttributes<HTMLDivElement>, DictionaryProps {
-	ref?: React.Ref<HTMLDivElement>
 	routes: { href: string; label: string }[]
 }
 
-export const Header = ({ dict, routes, className, children, ref, ...props }: HeaderProps) => {
+export const Header = ({ dict, routes, className, children, ...props }: HeaderProps) => {
+	const headerRef = React.useRef<HTMLDivElement>(null)
 	const [isAtTop, setIsAtTop] = React.useState(true)
 
 	React.useEffect(() => {
@@ -26,7 +26,7 @@ export const Header = ({ dict, routes, className, children, ref, ...props }: Hea
 
 	return (
 		<header
-			ref={ref}
+			ref={headerRef}
 			data-test="header"
 			className={cn(
 				"sticky top-0 right-0 left-0 z-50",

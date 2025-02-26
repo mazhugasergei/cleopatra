@@ -1,5 +1,7 @@
 "use client"
 
+import { Header } from "@/components/layout/header"
+import { buttonVariants } from "@/components/ui/button"
 import { headingFont } from "@/fonts"
 import hero from "@/images/hero.jpg"
 import { DictionaryProps } from "@/lib/dictionaries"
@@ -8,11 +10,8 @@ import { ChevronDownIcon } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
 import React from "react"
-import { Header } from "../layout/header"
-import { buttonVariants } from "../ui/button"
 
 export interface HeroProps extends React.HTMLAttributes<HTMLDivElement>, DictionaryProps {
-	ref?: React.Ref<HTMLDivElement>
 	routes: { href: string; label: string }[]
 }
 

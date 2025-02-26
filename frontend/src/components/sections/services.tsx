@@ -1,14 +1,13 @@
+import { SectionHeader } from "@/components/layout/section-header"
+import { Logo } from "@/components/logo"
 import { headingFont } from "@/fonts"
 import { DictionaryProps } from "@/lib/dictionaries"
 import { cn } from "@/utils/cn"
 import { preventWidowWord } from "@/utils/text"
 import { BoxesIcon, CarFrontIcon, ContainerIcon } from "lucide-react"
 import React from "react"
-import { SectionHeader } from "../layout/section-header"
-import { Logo } from "../logo"
 
 export interface ServicesProps extends React.HTMLAttributes<HTMLDivElement>, DictionaryProps {
-	ref?: React.Ref<HTMLDivElement>
 	routes: { href: string; label: string }[]
 }
 
