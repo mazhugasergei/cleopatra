@@ -6,6 +6,7 @@ import { preventWidowWord } from "@/utils/text"
 import Image from "next/image"
 import React from "react"
 import { SectionHeader } from "../layout/section-header"
+import { Logo } from "../logo"
 
 export interface AboutProps extends React.HTMLAttributes<HTMLDivElement>, DictionaryProps {
 	ref?: React.Ref<HTMLDivElement>
@@ -20,13 +21,15 @@ export const About = ({ dict, routes, ...props }: AboutProps) => {
 				<h2
 					className={cn(
 						headingFont.className,
-						"mt-6 text-center text-5xl font-bold sm:text-8xl md:mt-12 md:-mb-6 md:text-9xl lg:mt-16 lg:-mb-10 lg:text-[12rem]"
+						"my-10 text-center text-5xl font-bold sm:text-8xl md:my-12 md:-mb-6 md:text-9xl lg:my-16 lg:-mb-10 lg:text-[12rem]"
 					)}
 				>
 					{dict?.about?.heading}
 				</h2>
+
 				<div className="grid grid-cols-1 gap-4 md:grid-cols-[10fr_8fr] md:gap-8">
-					<div className="space-y-4 self-center py-4 md:py-12">
+					<div className="space-y-4 self-center md:py-12">
+						<Logo full className="inline-block max-md:hidden" />
 						{dict?.about?.description?.map((p: string, i: number) => <p key={i}>{preventWidowWord(p)}</p>)}
 					</div>
 

@@ -4,6 +4,7 @@ import { cn } from "@/utils/cn"
 import { BoxesIcon, CarFrontIcon, ContainerIcon } from "lucide-react"
 import React from "react"
 import { SectionHeader } from "../layout/section-header"
+import { Logo } from "../logo"
 
 export interface ServicesProps extends React.HTMLAttributes<HTMLDivElement>, DictionaryProps {
 	ref?: React.Ref<HTMLDivElement>
@@ -33,14 +34,12 @@ export const Services = ({ dict, routes, className, ...props }: ServicesProps) =
 		<section id="services" data-test="services" className={cn("", className)} {...props}>
 			<SectionHeader backLink="#about" title="Our services" routes={routes} />
 
-			<h2
-				className={cn(
-					headingFont.className,
-					"my-10 text-center text-4xl font-bold sm:text-6xl md:my-16 md:text-7xl lg:my-18 lg:text-9xl"
-				)}
-			>
-				{dict?.services?.heading}
-			</h2>
+			<div className="my-10 space-y-2 text-center md:my-16 lg:my-18">
+				<h2 className={cn(headingFont.className, "text-4xl font-bold sm:text-6xl md:text-7xl lg:text-9xl")}>
+					{dict?.services?.heading}
+				</h2>
+				<Logo full />
+			</div>
 
 			<div className="wrapper !max-w-3xl space-y-8 pb-8 md:pb-12">
 				{services.map(({ title, description, Icon }, index) => (

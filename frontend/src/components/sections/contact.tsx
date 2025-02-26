@@ -19,8 +19,10 @@ export const Contact = ({ dict, routes, className, ...props }: ContactProps) => 
 		<section id="contact" data-test="contact" className={cn("flex flex-col", className)} {...props}>
 			<SectionHeader backLink="#services" title="Contact" routes={routes} />
 
-			<div className={cn(headingFont.className, "my-10 space-y-2 text-center md:my-16 lg:my-18")}>
-				<h2 className="text-center text-4xl font-bold sm:text-6xl md:text-7xl lg:text-8xl">{dict?.contact?.heading}</h2>
+			<div className="my-10 space-y-2 text-center md:my-16 lg:my-18">
+				<h2 className={cn(headingFont.className, "text-4xl font-bold sm:text-6xl md:text-7xl lg:text-8xl")}>
+					{dict?.contact?.heading}
+				</h2>
 				<Logo full />
 			</div>
 
