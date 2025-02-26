@@ -1,6 +1,7 @@
 import { headingFont } from "@/fonts"
 import { DictionaryProps } from "@/lib/dictionaries"
 import { cn } from "@/utils/cn"
+import { preventWidowWord } from "@/utils/text"
 import { BoxesIcon, CarFrontIcon, ContainerIcon } from "lucide-react"
 import React from "react"
 import { SectionHeader } from "../layout/section-header"
@@ -46,8 +47,8 @@ export const Services = ({ dict, routes, className, ...props }: ServicesProps) =
 					<div key={`service-${index}`} className="grid grid-cols-[auto_1fr] gap-4">
 						<Icon size={40} />
 						<div className="space-y-2">
-							<h3 className="text-2xl font-bold">{title}</h3>
-							<p>{description}</p>
+							<h3 className="text-2xl font-bold">{preventWidowWord(title)}</h3>
+							<p>{preventWidowWord(description)}</p>
 						</div>
 					</div>
 				))}
