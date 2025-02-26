@@ -34,6 +34,24 @@
 		]
 	},
 	"contact": {
-		"heading": "Contact our team"
+		"heading": "Contact our team",
+		"items": {
+			"call": {
+				"heading": "Call us",
+				"subheading": "Speak to our friendly team in a call."
+			},
+			"chat": {
+				"heading": "Chat with us",
+				"subheading": "Speak to our friendly team in a chat."
+			},
+			"address": {
+				"heading": "Visit us",
+				"subheading": "Chat to us in person at our office in Incheon."
+			},
+			"bank": {
+				"heading": "Bank details",
+				"subheading": "Make a payment easily with our bank details."
+			}
+		}
 	}
 }
