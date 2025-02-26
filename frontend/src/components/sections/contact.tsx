@@ -1,7 +1,7 @@
 "use client"
 
 import { headingFont } from "@/fonts"
-import map from "@/images/map.jpg"
+import map from "@/images/map.svg"
 import { DictionaryProps } from "@/lib/dictionaries"
 import { cn } from "@/utils/cn"
 import { preventWidowWord } from "@/utils/text"
@@ -66,8 +66,8 @@ export const Contact = ({ dict, routes, className, ...props }: ContactProps) => 
 				<Logo full />
 			</div>
 
-			<div className="wrapper grid flex-1 grid-cols-1 gap-8 pb-8 md:grid-cols-[7fr_10fr]">
-				<Image src={map} alt="" className="rounded-md md:order-1" />
+			<div className="wrapper grid flex-1 grid-cols-1 gap-8 pb-8 md:grid-cols-2 lg:grid-cols-[7fr_10fr]">
+				<Image src={map} alt="" className="w-full rounded-md md:order-1" />
 
 				<div className={cn("space-y-4", className)} {...props}>
 					{items.map(({ Component, Icon, heading, subheading }, index) => (
