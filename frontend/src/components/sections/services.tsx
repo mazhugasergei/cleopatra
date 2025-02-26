@@ -11,7 +11,7 @@ export interface ServicesProps extends React.HTMLAttributes<HTMLDivElement>, Dic
 	routes: { href: string; label: string }[]
 }
 
-export const Services = ({ dict, routes, className, ...props }: ServicesProps) => {
+export const Services = ({ dict, routes, ...props }: ServicesProps) => {
 	const services = [
 		{
 			title: dict?.services?.items[0].title ?? "",
@@ -31,7 +31,7 @@ export const Services = ({ dict, routes, className, ...props }: ServicesProps) =
 	]
 
 	return (
-		<section id="services" data-test="services" className={cn("", className)} {...props}>
+		<section id="services" data-test="services" {...props}>
 			<SectionHeader backLink="#about" title="Our services" routes={routes} />
 
 			<div className="my-10 space-y-2 text-center md:my-16 lg:my-18">
