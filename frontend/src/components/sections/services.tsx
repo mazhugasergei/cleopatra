@@ -1,11 +1,7 @@
 import { headingFont } from "@/fonts"
-import cars from "@/images/cars.jpg"
-import containers from "@/images/containers.jpg"
-import parts from "@/images/parts.jpg"
 import { DictionaryProps } from "@/lib/dictionaries"
 import { cn } from "@/utils/cn"
-import { preventWidowWord } from "@/utils/text"
-import Image, { StaticImageData } from "next/image"
+import { BoxesIcon, CarFrontIcon, ContainerIcon } from "lucide-react"
 import React from "react"
 import { SectionHeader } from "../layout/section-header"
 
@@ -15,75 +11,47 @@ export interface ServicesProps extends React.HTMLAttributes<HTMLDivElement>, Dic
 }
 
 export const Services = ({ dict, routes, className, ...props }: ServicesProps) => {
-	const services: {
-		title: string
-		description: string
-		image?: StaticImageData
-	}[] = [
+	const services = [
 		{
 			title: dict?.services?.items[0].title ?? "",
 			description: dict?.services?.items[0].description ?? "",
-			image: cars,
+			Icon: CarFrontIcon,
 		},
 		{
 			title: dict?.services?.items[1].title ?? "",
 			description: dict?.services?.items[1].description ?? "",
-			image: parts,
+			Icon: BoxesIcon,
 		},
 		{
 			title: dict?.services?.items[2].title ?? "",
 			description: dict?.services?.items[2].description ?? "",
-			image: containers,
+			Icon: ContainerIcon,
 		},
 	]
 
 	return (
-		<section
-			id="services"
-			data-test="services"
-			className={cn("bg-primary text-primary-foreground", className)}
-			{...props}
-		>
-			<SectionHeader backLink="#about" title="Our services" className="bg-inherit" routes={routes} />
+		<section id="services" data-test="services" className={cn("", className)} {...props}>
+			<SectionHeader backLink="#about" title="Our services" routes={routes} />
+
 			<h2
 				className={cn(
 					headingFont.className,
-					"mt-6 text-center text-4xl font-bold sm:text-6xl md:mt-12 md:text-7xl lg:text-9xl"
+					"my-6 text-center text-4xl font-bold sm:text-6xl md:my-12 md:text-7xl lg:my-16 lg:text-9xl"
 				)}
 			>
 				{dict?.services?.heading}
 			</h2>
-			<div className="wrapper grid grid-cols-1 gap-4 py-8 md:grid-cols-2 md:py-12">
-				{services.map(({ title, description, image }, index) => {
-					const lastAndOdd = index === services.length - 1 && services.length % 2
 
-					return (
-						<div
-							key={`service-${index}`}
-							className={cn("bg-secondary-foreground relative isolate", lastAndOdd && "md:col-span-2")}
-						>
-							{image && (
-								<Image
-									src={image}
-									alt=""
-									width={lastAndOdd ? 2000 : 1000}
-									height={1000}
-									placeholder="blur"
-									className="absolute z-[-1] h-full w-full object-cover"
-								/>
-							)}
-							<div
-								className={cn(
-									"flex flex-col justify-end space-y-2 bg-black/50 p-4 sm:aspect-[16/9]",
-									lastAndOdd && "md:aspect-[32/9]"
-								)}
-							>
-								<h3 className="text-xl lg:text-2xl xl:text-3xl">{title}</h3>
-								<p className={cn("max-lg:text-sm", lastAndOdd && "md:text-balance")}>{preventWidowWord(description)}</p>
-							</div>
+			<div className="wrapper !max-w-3xl space-y-8 pb-8 md:pb-12">
+				{services.map(({ title, description, Icon }, index) => (
+					<div key={`service-${index}`} className="grid grid-cols-[auto_1fr] gap-4">
+						<Icon size={40} />
+						<div className="space-y-2">
+							<h3 className="text-2xl font-bold">{title}</h3>
+							<p>{description}</p>
 						</div>
-					)
-				})}
+					</div>
+				))}
 			</div>
 		</section>
 	)
