@@ -163,3 +163,7 @@ body {
 .wrapper {
 	@apply mx-auto w-full max-w-[86rem] px-4;
 }
+
+p {
+	@apply leading-6.5;
+}
