@@ -1,8 +1,8 @@
 "use client"
 
-import { PhoneIcon } from "@/app/icons"
 import { DictionaryProps } from "@/lib/dictionaries"
 import { cn } from "@/utils/cn"
+import { Phone as PhoneIcon } from "lucide-react"
 import Link from "next/link"
 import React from "react"
 import { Logo } from "../logo"

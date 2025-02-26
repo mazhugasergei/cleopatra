@@ -1,7 +1,7 @@
 "use client"
 
-import { CloseIcon, MenuIcon } from "@/app/icons"
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu"
+import { X as CloseIcon, Menu as MenuIcon } from "lucide-react"
 import Link from "next/link"
 import React from "react"
 import { Button } from "./button"

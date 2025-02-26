@@ -1,10 +1,10 @@
 "use client"
 
-import { ChevronDownIcon } from "@/app/icons"
 import { headingFont } from "@/fonts"
 import { DictionaryProps } from "@/lib/dictionaries"
 import hero from "@/public/hero.jpg"
 import { cn } from "@/utils/cn"
+import { ChevronDown as ChevronDownIcon } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
 import React from "react"

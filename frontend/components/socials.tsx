@@ -1,4 +1,4 @@
-import { InstagramIcon } from "@/app/icons"
+import { Instagram as InstagramIcon } from "lucide-react"
 import Link from "next/link"
 import { buttonVariants } from "./ui/button"
 
