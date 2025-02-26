@@ -1,8 +1,8 @@
 "use client"
 
 import { headingFont } from "@/fonts"
+import hero from "@/images/hero.jpg"
 import { DictionaryProps } from "@/lib/dictionaries"
-import hero from "@/public/hero.jpg"
 import { cn } from "@/utils/cn"
 import { ChevronDown as ChevronDownIcon } from "lucide-react"
 import Image from "next/image"

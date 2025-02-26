@@ -1,6 +1,6 @@
 import { headingFont } from "@/fonts"
+import about from "@/images/about.jpg"
 import { DictionaryProps } from "@/lib/dictionaries"
-import about from "@/public/about.jpg"
 import { cn } from "@/utils/cn"
 import { preventWidowWord } from "@/utils/text"
 import Image from "next/image"
