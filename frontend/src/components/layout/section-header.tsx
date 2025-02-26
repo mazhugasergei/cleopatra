@@ -2,7 +2,7 @@
 
 import { useHeaderHeight } from "@/hooks/useHeaderHeight"
 import { cn } from "@/utils/cn"
-import { ChevronLeft as ChevronLeftIcon } from "lucide-react"
+import { ChevronLeftIcon } from "lucide-react"
 import Link from "next/link"
 import React from "react"
 import { buttonVariants } from "../ui/button"

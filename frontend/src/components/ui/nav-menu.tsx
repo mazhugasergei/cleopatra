@@ -1,7 +1,7 @@
 "use client"
 
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu"
-import { X as CloseIcon, Menu as MenuIcon } from "lucide-react"
+import { MenuIcon, XIcon } from "lucide-react"
 import Link from "next/link"
 import React from "react"
 import { Button } from "./button"
@@ -17,7 +17,7 @@ export const NavMenu = ({ routes, ...props }: MenuProps) => {
 		<DropdownMenu open={open} onOpenChange={setOpen}>
 			<DropdownMenuTrigger asChild>
 				<Button variant="ghost" size="icon">
-					{open ? <CloseIcon /> : <MenuIcon />}
+					{open ? <XIcon /> : <MenuIcon />}
 				</Button>
 			</DropdownMenuTrigger>
 			<DropdownMenuContent className="mx-4 flex flex-col">
