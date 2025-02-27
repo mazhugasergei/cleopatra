@@ -25,19 +25,19 @@ export default async function RootLayout({ children, params }: LayoutProps) {
 
 	const routes = [
 		{
-			href: "/#hero",
+			href: "#hero",
 			label: dict?.header?.home,
 		},
 		{
-			href: "/#about",
+			href: "#about",
 			label: dict?.header?.about,
 		},
 		{
-			href: "/#services",
+			href: "#services",
 			label: dict?.header?.services,
 		},
 		{
-			href: "/#contact",
+			href: "#contact",
 			label: dict?.header?.contact,
 		},
 	]
