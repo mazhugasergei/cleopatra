@@ -41,7 +41,7 @@ export const Header = ({ dict, routes, className, children, ...props }: HeaderPr
 					<ul className="flex items-center">
 						{routes.map(
 							({ href, label }, index) =>
-								href !== "/#contact" && (
+								href !== "#contact" && (
 									<li key={href} className={cn(!index && "-ml-4")}>
 										<Link
 											href={href}
