@@ -9,10 +9,10 @@ const config: StorybookConfig = {
 	},
 	staticDirs: [
 		"../public",
-		{
-			from: "../fonts",
-			to: "/fonts",
-		},
+		// {
+		// 	from: "../fonts",
+		// 	to: "/fonts",
+		// },
 	],
 }
 

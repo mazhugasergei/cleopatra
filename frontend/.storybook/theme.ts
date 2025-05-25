@@ -7,9 +7,7 @@ export const theme = create({
 	fontBase: '"Open Sans", sans-serif',
 	fontCode: "monospace",
 
-	brandTitle: `
-		<h1 class='logo'>CLEOPATRA <span>TRADING CO.</span></h1>
-	`,
+	brandTitle: `<h1 class='logo'>CLEOPATRA <span>TRADING CO.</span></h1>`,
 	brandImage: "",
 	brandTarget: "_self",
 
