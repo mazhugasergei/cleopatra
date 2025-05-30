@@ -4,12 +4,6 @@ import { getDictionary, Locale, locales } from "@/lib/dictionaries"
 import type { Metadata } from "next"
 import "../globals.css"
 
-export const metadata: Metadata = {
-	title: "Cleopatra Trading Co. | Cars & Spare Parts Delivered Worldwide",
-	description:
-		"Sourcing and shipping high-quality cars and spare parts worldwide. Trusted by customers for reliable service and multilingual support.",
-}
-
 export async function generateMetadata({ params }: { params: { lang: Locale } }): Promise<Metadata> {
 	const dict = await getDictionary(params.lang)
 
