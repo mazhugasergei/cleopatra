@@ -1,6 +1,7 @@
 import { DictClientSetup } from "@/components/get-dict"
 import { Footer } from "@/components/layout/footer"
 import { getDictionary, Locale, locales } from "@/lib/dictionaries"
+import { BASE_URL } from "@/utils/contants"
 import type { Metadata } from "next"
 import "../globals.css"
 
@@ -16,6 +17,12 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: Loc
 			title: dict.metadata.title,
 			description: dict.metadata.description,
 			images: [{ url: dict.metadata.ogImage, width: 1200, height: 630, alt: "Cleopatra Trading Co." }],
+		},
+		alternates: {
+			languages: {
+				...Object.fromEntries(locales.map((locale) => [locale, BASE_URL + "/" + locale])),
+				"x-default": BASE_URL + "/en",
+			},
 		},
 	}
 }
