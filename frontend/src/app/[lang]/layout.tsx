@@ -4,8 +4,9 @@ import { getDictionary, Locale, locales } from "@/lib/dictionaries"
 import type { Metadata } from "next"
 import "../globals.css"
 
-export async function generateMetadata({ params }: { params: { lang: Locale } }): Promise<Metadata> {
-	const dict = await getDictionary(params.lang)
+export async function generateMetadata({ params }: { params: Promise<{ lang: Locale }> }): Promise<Metadata> {
+	const lang = (await params).lang
+	const dict = await getDictionary(lang)
 
 	return {
 		title: dict.metadata.title,
