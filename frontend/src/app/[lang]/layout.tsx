@@ -10,6 +10,16 @@ export const metadata: Metadata = {
 		"Sourcing and shipping high-quality cars and spare parts worldwide. Trusted by customers for reliable service and multilingual support.",
 }
 
+export async function generateMetadata({ params }: { params: { lang: Locale } }): Promise<Metadata> {
+	const dict = await getDictionary(params.lang)
+
+	return {
+		title: dict.metadata.title,
+		description: dict.metadata.description,
+		keywords: dict.metadata.keywords,
+	}
+}
+
 export async function generateStaticParams() {
 	return locales.map((locale) => ({ lang: locale }))
 }
