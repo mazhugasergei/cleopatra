@@ -4,7 +4,7 @@ import { headingFont } from "@/fonts"
 import { DictionaryProps } from "@/lib/dictionaries"
 import { cn } from "@/utils/cn"
 import { preventWidowWord } from "@/utils/text"
-import { BoxesIcon, CarFrontIcon, ContainerIcon } from "lucide-react"
+import { Bolt, Car, ContainerIcon } from "lucide-react"
 import React from "react"
 
 export interface ServicesProps extends React.HTMLAttributes<HTMLDivElement>, DictionaryProps {
@@ -16,12 +16,12 @@ export const Services = ({ dict, routes, ...props }: ServicesProps) => {
 		{
 			title: dict?.services?.items[0].title ?? "",
 			description: dict?.services?.items[0].description ?? "",
-			Icon: CarFrontIcon,
+			Icon: Car,
 		},
 		{
 			title: dict?.services?.items[1].title ?? "",
 			description: dict?.services?.items[1].description ?? "",
-			Icon: BoxesIcon,
+			Icon: Bolt,
 		},
 		{
 			title: dict?.services?.items[2].title ?? "",
@@ -44,7 +44,7 @@ export const Services = ({ dict, routes, ...props }: ServicesProps) => {
 			<div className="wrapper max-w-4xl space-y-8 pb-8 md:pb-12">
 				{services.map(({ title, description, Icon }, index) => (
 					<div key={`service-${index}`} className="grid grid-cols-[auto_1fr] gap-4">
-						<Icon size={40} />
+						<Icon size={20} className="size-9 rounded-md border p-2" />
 						<div className="space-y-2">
 							<h3 className="text-2xl font-bold">{preventWidowWord(title)}</h3>
 							<p>{preventWidowWord(description)}</p>
