@@ -3,7 +3,7 @@ import type { MetadataRoute } from "next"
 export default function sitemap(): MetadataRoute.Sitemap {
 	const baseUrl = "https://www.cleopatrading.com"
 	const locales = ["en", "ru"]
-	const pages = ["", "about", "services", "contact"]
+	const pages = [""]
 
 	const urls: MetadataRoute.Sitemap = []
 
