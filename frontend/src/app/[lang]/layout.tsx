@@ -11,6 +11,11 @@ export async function generateMetadata({ params }: { params: { lang: Locale } })
 		title: dict.metadata.title,
 		description: dict.metadata.description,
 		keywords: dict.metadata.keywords,
+		openGraph: {
+			title: dict.metadata.title,
+			description: dict.metadata.description,
+			images: [{ url: dict.metadata.ogImage, width: 1200, height: 630, alt: "Cleopatra Trading Co." }],
+		},
 	}
 }
 

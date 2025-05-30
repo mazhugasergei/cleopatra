@@ -18,7 +18,8 @@
 			"global car shipping",
 			"high-quality car parts",
 			"Cleopatra Trading"
-		]
+		],
+		"ogImage": "/og-image-en.jpg"
 	},
 	"header": {
 		"home": "Home",
