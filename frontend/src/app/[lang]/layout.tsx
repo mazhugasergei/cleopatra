@@ -1,7 +1,8 @@
-import { DictClientSetup } from "@/components/get-dict"
+import { SetDictClient } from "@/components/get-dict/client"
 import { Footer } from "@/components/layout/footer"
-import { getDictionary, Locale, locales } from "@/lib/dictionaries"
-import { BASE_URL } from "@/utils/contants"
+import { BASE_URL, LOCALES } from "@/lib/constants"
+import { getDictionary } from "@/lib/dictionaries"
+import type { Locale } from "@/lib/types"
 import type { Metadata } from "next"
 import "../globals.css"
 
@@ -20,7 +21,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: Loc
 		},
 		alternates: {
 			languages: {
-				...Object.fromEntries(locales.map((locale) => [locale, BASE_URL + "/" + locale])),
+				...Object.fromEntries(LOCALES.map((locale) => [locale, BASE_URL + "/" + locale])),
 				"x-default": BASE_URL + "/en",
 			},
 		},
@@ -28,7 +29,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: Loc
 }
 
 export async function generateStaticParams() {
-	return locales.map((locale) => ({ lang: locale }))
+	return LOCALES.map((locale) => ({ lang: locale }))
 }
 
 export interface LayoutProps {
@@ -38,31 +39,11 @@ export interface LayoutProps {
 
 export default async function RootLayout({ children, params }: LayoutProps) {
 	const lang = (await params).lang
-	const dict = await getDictionary(lang)
-
-	const routes = [
-		{
-			href: "#hero",
-			label: dict?.header?.home,
-		},
-		{
-			href: "#about",
-			label: dict?.header?.about,
-		},
-		{
-			href: "#services",
-			label: dict?.header?.services,
-		},
-		{
-			href: "#contact",
-			label: dict?.header?.contact,
-		},
-	]
 
 	return (
 		<html lang={lang}>
 			<body>
-				<DictClientSetup />
+				<SetDictClient />
 				{children}
 				<Footer locale={lang} />
 			</body>

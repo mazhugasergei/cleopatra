@@ -13,7 +13,7 @@ export interface HeaderProps extends React.HTMLAttributes<HTMLDivElement>, Dicti
 	routes: { href: string; label: string }[]
 }
 
-export const Header = ({ dict, routes, className, children, ...props }: HeaderProps) => {
+export const Header = ({ dict, routes, className, ...props }: HeaderProps) => {
 	const headerRef = React.useRef<HTMLDivElement>(null)
 	const [isAtTop, setIsAtTop] = React.useState(true)
 

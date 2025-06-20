@@ -1,5 +1,5 @@
 import { LanguageSelect } from "@/components/language-select"
-import { Locale } from "@/lib/dictionaries"
+import type { Locale } from "@/lib/types"
 import { cn } from "@/utils/cn"
 import { Logo } from "../logo"
 

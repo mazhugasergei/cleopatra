@@ -1,4 +1,6 @@
 // import "server-only"
+
+import type { Locale } from "../types"
 import en from "./en.json"
 import ru from "./ru.json"
 
@@ -8,8 +10,5 @@ export interface DictionaryProps {
 	}
 }
 
-export type Locale = "en" | "ru"
-
-export const locales: Locale[] = ["en", "ru"]
 const dictionaries = { en, ru }
 export const getDictionary = async (locale: Locale): Promise<{ [key: string]: any }> => dictionaries[locale]

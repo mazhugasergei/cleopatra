@@ -14,7 +14,7 @@ export const NavMenu = ({ routes, ...props }: MenuProps) => {
 	const [open, setOpen] = React.useState(false)
 
 	return (
-		<DropdownMenu open={open} onOpenChange={setOpen}>
+		<DropdownMenu open={open} onOpenChange={setOpen} {...props}>
 			<DropdownMenuTrigger asChild>
 				<Button variant="ghost" size="icon">
 					{open ? <XIcon /> : <MenuIcon />}
