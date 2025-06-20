@@ -1,7 +1,7 @@
 "use client"
 
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu"
-import { Locale } from "@/lib/dictionaries"
+import type { Locale } from "@/lib/types"
 import { GlobeIcon } from "lucide-react"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
